@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Музыка-->
+        <scene sceneID="wvv-Gq-a1t">
+            <objects>
+                <viewController storyboardIdentifier="MusicView" id="B0f-ZE-g3k" customClass="YADMusicViewController" customModule="YandexDisk" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9MM-g0-Ot8"/>
+                        <viewControllerLayoutGuide type="bottom" id="xAG-lP-fcp"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Aaa-HX-bZz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Музыка" image="music-player" id="e5V-Ke-uu6"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lz7-eY-gZS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1198" y="-448"/>
+        </scene>
+        <!--Base Tabbar Controller-->
+        <scene sceneID="q4i-k2-GiH">
+            <objects>
+                <tabBarController id="NaU-c1-4tY" customClass="YADBaseTabbarController" customModule="YandexDisk" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="h2i-lx-iEY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="B0f-ZE-g3k" kind="relationship" relationship="viewControllers" id="dL5-s6-i28"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FHG-JC-KBB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="314" y="-448"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="music-player" width="24" height="24"/>
+    </resources>
+</document>

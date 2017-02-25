@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Видео-->
+        <scene sceneID="3BZ-nZ-xog">
+            <objects>
+                <viewController storyboardIdentifier="VideoView" id="eg5-gL-Soa" customClass="YADVideoViewController" customModule="YandexDisk" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="I71-Ny-glw"/>
+                        <viewControllerLayoutGuide type="bottom" id="bgr-f0-T9V"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="PcM-Ky-iLg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Видео" image="play-button" id="jnM-IW-cYt"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="K1Q-sv-6C6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="516" y="-146"/>
+        </scene>
+        <!--Base Tabbar Controller-->
+        <scene sceneID="3ac-W4-J3V">
+            <objects>
+                <tabBarController id="AF7-vW-EYF" customClass="YADBaseTabbarController" customModule="YandexDisk" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="k2d-0W-imQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="eg5-gL-Soa" kind="relationship" relationship="viewControllers" id="9RG-FT-Qt0"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="unC-k1-MRu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-436" y="181"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="play-button" width="24" height="24"/>
+    </resources>
+</document>

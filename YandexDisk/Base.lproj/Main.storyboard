@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="kLoginScreenIdentifier" id="BYZ-38-t0r" customClass="YADLoginViewController" customModule="YandexDisk" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tnq-wF-tl9">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="tnq-wF-tl9" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" constant="-20" id="CE2-AU-vWZ"/>
+                            <constraint firstItem="tnq-wF-tl9" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="10" id="CYD-YX-tU2"/>
+                            <constraint firstItem="tnq-wF-tl9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="en3-KO-mH6"/>
+                            <constraint firstItem="tnq-wF-tl9" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="kdl-aY-3sI"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="tnq-wF-tl9" id="1WZ-BO-6Xg"/>
+                        <segue destination="HI1-JS-PDp" kind="presentation" identifier="kLoginTabbarSegueIdentifier" id="MWO-Hs-cG2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="60" y="37.331334332833585"/>
+        </scene>
+        <!--Base Tabbar Controller-->
+        <scene sceneID="ush-xb-buu">
+            <objects>
+                <tabBarController storyboardIdentifier="kTabbarScreenIdentifier" id="HI1-JS-PDp" customClass="YADBaseTabbarController" customModule="YandexDisk" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="HPh-Hk-Yuq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="qnd-od-dDm" kind="relationship" relationship="viewControllers" id="Pln-PK-i26"/>
+                        <segue destination="vN1-cj-vsa" kind="relationship" relationship="viewControllers" id="Pxo-zH-c8i"/>
+                        <segue destination="HNJ-2Z-fHW" kind="relationship" relationship="viewControllers" id="KIY-Z7-k2Q"/>
+                        <segue destination="BAO-ga-Ryb" kind="relationship" relationship="viewControllers" id="1vX-uF-C1R"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gHI-5k-Mdg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="846" y="37"/>
+        </scene>
+        <!--SettingView-->
+        <scene sceneID="ohD-CJ-jeA">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Settings" referencedIdentifier="SettingView" id="qnd-od-dDm" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Настройки" image="settings-work-tool" id="LQm-jN-8t9"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DPb-So-0cP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1528" y="-84"/>
+        </scene>
+        <!--PhotoView-->
+        <scene sceneID="xz2-9k-taP">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Photo" referencedIdentifier="PhotoView" id="vN1-cj-vsa" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Фото" image="photo-camera" id="D8R-n2-4tm"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZNo-a3-YcD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1529" y="-22"/>
+        </scene>
+        <!--VideoView-->
+        <scene sceneID="5GJ-tS-vKv">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Video" referencedIdentifier="VideoView" id="HNJ-2Z-fHW" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Видео" image="play-button" id="yXh-nB-6wa"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TqG-gf-3zf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1530" y="37"/>
+        </scene>
+        <!--MusicView-->
+        <scene sceneID="O9u-gc-9Ik">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Music" referencedIdentifier="MusicView" id="BAO-ga-Ryb" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Музыка" image="music-player" id="waa-Fy-M4C"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="btk-Mg-6NB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1530" y="102"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="music-player" width="24" height="24"/>
+        <image name="photo-camera" width="24" height="24"/>
+        <image name="play-button" width="24" height="24"/>
+        <image name="settings-work-tool" width="24" height="24"/>
+    </resources>
+</document>

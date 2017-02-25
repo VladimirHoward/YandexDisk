@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Фото-->
+        <scene sceneID="zux-Zc-W1b">
+            <objects>
+                <viewController storyboardIdentifier="PhotoView" id="3tU-ig-FoI" customClass="YADPhotoViewController" customModule="YandexDisk" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="rU6-RG-Clc"/>
+                        <viewControllerLayoutGuide type="bottom" id="oFC-UC-F2E"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xjc-mG-Yse">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Фото" image="photo-camera" id="uOt-jg-BPY"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YxZ-tH-2XW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="351" y="0.0"/>
+        </scene>
+        <!--Base Tabbar Controller-->
+        <scene sceneID="6Cr-Bk-eVK">
+            <objects>
+                <tabBarController id="DWm-Lx-5q7" customClass="YADBaseTabbarController" customModule="YandexDisk" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="nIU-Tm-6po">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="3tU-ig-FoI" kind="relationship" relationship="viewControllers" id="Fy8-Zs-v2u"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vq3-TW-kfh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-476" y="0.0"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="photo-camera" width="24" height="24"/>
+    </resources>
+</document>

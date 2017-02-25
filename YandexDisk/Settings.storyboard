@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Настройки-->
+        <scene sceneID="sje-A9-PMe">
+            <objects>
+                <viewController storyboardIdentifier="SettingView" id="qLZ-c2-Auu" customClass="YADSettingsViewController" customModule="YandexDisk" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ngc-9Z-1Dx"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ck9-lH-XRt"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="DvQ-Av-l0p">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Настройки" image="settings-work-tool" id="Hnj-5b-rMB"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6j6-xZ-hhM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="412" y="-85"/>
+        </scene>
+        <!--Base Tabbar Controller-->
+        <scene sceneID="G79-53-I1h">
+            <objects>
+                <tabBarController id="vdu-rn-sbn" customClass="YADBaseTabbarController" customModule="YandexDisk" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="O6I-gq-9ge">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="qLZ-c2-Auu" kind="relationship" relationship="viewControllers" id="ZdR-0X-MyK"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkC-XM-vTd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-463" y="-85"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="settings-work-tool" width="24" height="24"/>
+    </resources>
+</document>
