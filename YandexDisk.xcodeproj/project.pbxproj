@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		844780DF1E634D61006FA3C0 /* YADVideoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844780DE1E634D61006FA3C0 /* YADVideoModel.swift */; };
+		844780E31E634EDC006FA3C0 /* YADVideoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844780E11E634EDC006FA3C0 /* YADVideoCollectionViewCell.swift */; };
+		844780E41E634EDC006FA3C0 /* YADVideoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 844780E21E634EDC006FA3C0 /* YADVideoCollectionViewCell.xib */; };
 		896446C51E62DF7100BBDFAF /* YADPhotoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896446C41E62DF7100BBDFAF /* YADPhotoModel.swift */; };
 		896446C91E62F55400BBDFAF /* YADPhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896446C71E62F55400BBDFAF /* YADPhotoCollectionViewCell.swift */; };
 		896446CA1E62F55400BBDFAF /* YADPhotoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 896446C81E62F55400BBDFAF /* YADPhotoCollectionViewCell.xib */; };
@@ -63,6 +66,9 @@
 
 /* Begin PBXFileReference section */
 		1BE49D53CE0865CB5E5DF3E1 /* Pods_YandexDisk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YandexDisk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		844780DE1E634D61006FA3C0 /* YADVideoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YADVideoModel.swift; sourceTree = "<group>"; };
+		844780E11E634EDC006FA3C0 /* YADVideoCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YADVideoCollectionViewCell.swift; sourceTree = "<group>"; };
+		844780E21E634EDC006FA3C0 /* YADVideoCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YADVideoCollectionViewCell.xib; sourceTree = "<group>"; };
 		896446C41E62DF7100BBDFAF /* YADPhotoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YADPhotoModel.swift; sourceTree = "<group>"; };
 		896446C71E62F55400BBDFAF /* YADPhotoCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YADPhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		896446C81E62F55400BBDFAF /* YADPhotoCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YADPhotoCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -146,6 +152,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		844780E01E634EBC006FA3C0 /* CustomCell */ = {
+			isa = PBXGroup;
+			children = (
+				844780E11E634EDC006FA3C0 /* YADVideoCollectionViewCell.swift */,
+				844780E21E634EDC006FA3C0 /* YADVideoCollectionViewCell.xib */,
+			);
+			name = CustomCell;
+			sourceTree = "<group>";
+		};
 		896446C61E62F51300BBDFAF /* Custom Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -188,6 +203,7 @@
 			children = (
 				89C5D1BD1E620EBE00D2B145 /* Token */,
 				896446C41E62DF7100BBDFAF /* YADPhotoModel.swift */,
+				844780DE1E634D61006FA3C0 /* YADVideoModel.swift */,
 				89CC0F061E6208D300051700 /* YandexDisk.xcdatamodeld */,
 			);
 			name = "Data Model";
@@ -250,6 +266,7 @@
 		89C5D1751E620A5100D2B145 /* Video Userstory */ = {
 			isa = PBXGroup;
 			children = (
+				844780E01E634EBC006FA3C0 /* CustomCell */,
 				89C5D19B1E620D1100D2B145 /* YADVideoOperation.swift */,
 				89C5D19D1E620D1A00D2B145 /* YADVideoManager.swift */,
 				89C5D19F1E620D2400D2B145 /* YADVideoViewController.swift */,
@@ -394,7 +411,7 @@
 				TargetAttributes = {
 					89CC0EFB1E6208D300051700 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = GB857ZG62U;
+						DevelopmentTeam = 3SD8DJJ978;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -427,6 +444,7 @@
 				89C5D1C51E620F6C00D2B145 /* Podfile in Resources */,
 				89C5D1961E620CAD00D2B145 /* Music.storyboard in Resources */,
 				89C5D1A21E620D2B00D2B145 /* Video.storyboard in Resources */,
+				844780E41E634EDC006FA3C0 /* YADVideoCollectionViewCell.xib in Resources */,
 				896446CA1E62F55400BBDFAF /* YADPhotoCollectionViewCell.xib in Resources */,
 				89CC0F0A1E6208D300051700 /* Assets.xcassets in Resources */,
 				89CC0F051E6208D300051700 /* Main.storyboard in Resources */,
@@ -490,6 +508,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				89C5D18C1E620BF600D2B145 /* YADSettingsAPI_WRAPPER.swift in Sources */,
+				844780E31E634EDC006FA3C0 /* YADVideoCollectionViewCell.swift in Sources */,
 				89C5D1921E620C9700D2B145 /* YADMusicManager.swift in Sources */,
 				89C5D1B61E620E2200D2B145 /* YADGlobalAPI_WRAPPER.swift in Sources */,
 				89C5D18E1E620C0500D2B145 /* YADSettingsPresenter.swift in Sources */,
@@ -525,6 +544,7 @@
 				89C5D1901E620C8200D2B145 /* YADMusicOperation.swift in Sources */,
 				89C5D1BC1E620EA900D2B145 /* YADOperationManager.swift in Sources */,
 				89C5D1B01E620DCC00D2B145 /* YADPhotoAPI_WRAPPER.swift in Sources */,
+				844780DF1E634D61006FA3C0 /* YADVideoModel.swift in Sources */,
 				89C5D17C1E620B3C00D2B145 /* YADLoginManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -649,7 +669,7 @@
 			baseConfigurationReference = B74452E7DB213C514D157E26 /* Pods-YandexDisk.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = GB857ZG62U;
+				DEVELOPMENT_TEAM = 3SD8DJJ978;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/SDWebImage",
@@ -671,7 +691,7 @@
 			baseConfigurationReference = 98C5028C0B8BEC14E65183CA /* Pods-YandexDisk.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = GB857ZG62U;
+				DEVELOPMENT_TEAM = 3SD8DJJ978;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/SDWebImage",
