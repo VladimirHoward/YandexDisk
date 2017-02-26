@@ -46,7 +46,7 @@ class YADVideoOperation: Operation
                 let resourceID = video["resource_id"].stringValue
                 let name = video["name"].stringValue
                 let path = video["path"].stringValue
-                let previewURL = ""
+                let previewURL = video["preview"].stringValue
                 let created = video["created"].stringValue
                 var fullSizeURL = ""
                 
