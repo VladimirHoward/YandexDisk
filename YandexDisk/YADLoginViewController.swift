@@ -6,6 +6,7 @@
 //  Copyright © 2017 vvz. All rights reserved.
 //
 //dev commit
+//photo commit
 
 import UIKit
 

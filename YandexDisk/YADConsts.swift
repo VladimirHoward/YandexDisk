@@ -44,6 +44,7 @@ class YADConst
             static let kUploadURL: NSString = "url"
             static let kResponseType: NSString = "response_type"
             static let kClientID: NSString = "client_id"
+            static let kImageType: NSString = "image"
         }
     }
     
