@@ -22,6 +22,11 @@ class YADDependencyInjector
          }
          */
         
+        if (view is YADPhotoViewController)
+        {
+            presenter = YADPhotoPresenter()
+        }
+        
         if presenter != nil
         {
             view.assignPresenter(presenter: presenter!)

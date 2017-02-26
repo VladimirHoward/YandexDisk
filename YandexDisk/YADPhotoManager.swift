@@ -10,5 +10,9 @@ import Foundation
 
 class YADPhotoManager
 {
-    
+    class func getPhotos (limit: Int, offset: Int, success: @escaping (NSArray, Int) -> Void, failure: @escaping (Int) -> Void)
+    {
+        let operation = YADPhotoOperation(withLimit: limit, offset: offset, success: success, failure: failure)
+        YADOperationManager.addBusinessLogicOperation(op: operation, cancellingQueue: true)
+    }
 }

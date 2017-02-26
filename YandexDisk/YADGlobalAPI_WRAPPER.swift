@@ -36,7 +36,7 @@ class YADGlobalAPI_WRAPPER
         
         let request = NSMutableURLRequest ()
         request.httpMethod = "GET"
-        request.setValue("OAuth "+YADLoginManager.sharedInstance.getToken(), forHTTPHeaderField: "Authorization")
+        request.setValue("OAuth " + YADLoginManager.sharedInstance.getToken(), forHTTPHeaderField: "Authorization")
         request.url = URL(string: requestString)
         
         return request
@@ -67,6 +67,7 @@ class YADGlobalAPI_WRAPPER
         
         let request = NSMutableURLRequest ()
         request.httpMethod = "POST"
+        request.setValue("OAuth " + YADLoginManager.sharedInstance.getToken(), forHTTPHeaderField: "Authorization")
         request.url = URL(string: requestString)
         
         return request
