@@ -13,6 +13,7 @@ class YADPhotoCollectionViewCell: UICollectionViewCell
 {
 
     @IBOutlet weak var photoView: UIImageView!
+    @IBOutlet weak var text: UILabel!
     
     func configureSelf(photo: YADPhotoModel)
     {
@@ -20,7 +21,7 @@ class YADPhotoCollectionViewCell: UICollectionViewCell
 //        let tempURL = "https://pp.vk.me/c615722/v615722650/15f4b/FhsTV4cLHGI.jpg"
 //        photoView.sd_setImage(with: NSURL(string: tempURL) as! URL)
         photoView.sd_setImage(with: NSURL(string: photo.previewURL) as! URL, placeholderImage: #imageLiteral(resourceName: "placeholder2"))
-
+        text.text = photo.name
         
     }
 

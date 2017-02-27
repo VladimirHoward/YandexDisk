@@ -39,11 +39,10 @@ class YADPhotoOperation: Operation
             
             let outArray = NSMutableArray()
             let photos = jsonResponse["items"].arrayValue
-            let totalCount = jsonResponse["limit"].intValue
+            let jsonOffset = jsonResponse["offset"].intValue
             
             for photo in photos
             {
-                
                 let resourceID = photo["resource_id"].stringValue
                 let name = photo["name"].stringValue
                 let path = photo["path"].stringValue
@@ -67,11 +66,11 @@ class YADPhotoOperation: Operation
             if (self.isCancelled != true)
             {
                 print("количество моделей в массиве после парсинга в Операции - \(outArray.count)")
-                self.success(outArray, totalCount)
+                self.success(outArray, jsonOffset)
             }
             else
             {
-                self.success(NSArray(), totalCount)
+                self.success(NSArray(), jsonOffset)
             }
             
             semaphore.signal()
