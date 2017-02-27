@@ -12,8 +12,8 @@ class YADPhotoPresenter: YADBasePresenter
 {
     
     private let dataSource = NSMutableArray()
-    private var totalCount = 0
-    private var pageSize = 20
+    private var jsonModelCount = 0
+    private var pageSize = 10
     private weak var view: YADBaseView?
     
     func assignView(view: YADBaseView)
@@ -23,13 +23,12 @@ class YADPhotoPresenter: YADBasePresenter
     
     func viewLoaded() -> Void
     {
-        loadModels(withOffset: 0, and: 20)
+        loadModels(withOffset: 0, and: 10)
         
     }
     
     func refreshData()
     {
-        totalCount = 0
         let allCount = dataSource.count
         dataSource.removeAllObjects()
         loadModels(withOffset: 0, and: allCount)
@@ -38,15 +37,24 @@ class YADPhotoPresenter: YADBasePresenter
     func getModel(atIndexPath indexPath: NSIndexPath) -> Any
     {
         let model = dataSource[indexPath.row] as! YADPhotoModel
-        print("PRESENTER. indexPath.row - \(indexPath.row), dataSource.count - \(dataSource.count)")
+        
         if (indexPath.row == dataSource.count - 1)
         {
-            print("PRESENTER. indexPath.row \(indexPath.row) == \(dataSource.count) - 1 dataSource.count")
-            if dataSource.count == totalCount
+            
+            if jsonModelCount == pageSize
+            {
+                loadModels(withOffset: dataSource.count, and: pageSize)
+            }
+            
+            if jsonModelCount < pageSize
             {
                 return model
             }
-            loadModels(withOffset: dataSource.count, and: pageSize)
+            
+            if jsonModelCount == 0
+            {
+                return model
+            }
         }
         
         return model
@@ -59,21 +67,21 @@ class YADPhotoPresenter: YADBasePresenter
     
     func loadModels(withOffset offset: Int, and count: Int)
     {
-        YADPhotoManager.getPhotos(limit: count, offset: offset, success: { [weak self] (data, count) in
+        YADPhotoManager.getPhotos(limit: count, offset: offset, success: { [weak self] (data, jsonOffset) in
             
             DispatchQueue.main.async {
                 
                 if (self != nil)
                 {
-                    self?.totalCount = count
                     self?.dataSource.addObjects(from: data as! [Any])
+                    self?.jsonModelCount = data.count
                     print("количество объектов после парсинга в Presentere - \(data.count)")
                     self?.view?.reloadData()
                 }
                 
             }
             
-        }, failure: {[weak self] (errirCode) in
+        }, failure: {[weak self] (errorCode) in
         
         })
     }

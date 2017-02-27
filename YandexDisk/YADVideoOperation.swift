@@ -38,7 +38,7 @@ class YADVideoOperation: Operation
             
             let outArray = NSMutableArray()
             let videos = jsonResponse["items"].arrayValue
-            let totalCount = jsonResponse["limit"].intValue
+            let jsonOffset = jsonResponse["offset"].intValue
             
             for video in videos
             {
@@ -66,11 +66,11 @@ class YADVideoOperation: Operation
             if (self.isCancelled != true)
             {
                 print("количество моделей в массиве после парсинга в Операции - \(outArray.count)")
-                self.success(outArray, totalCount)
+                self.success(outArray, jsonOffset)
             }
             else
             {
-                self.success(NSArray(), totalCount)
+                self.success(NSArray(), jsonOffset)
             }
             
             semaphore.signal()
