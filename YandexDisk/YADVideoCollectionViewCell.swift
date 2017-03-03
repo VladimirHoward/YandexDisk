@@ -20,7 +20,7 @@ class YADVideoCollectionViewCell: UICollectionViewCell
         print("ссылка на превью в клетке - \(video.previewURL)")
 
         SDWebImageDownloader.shared().setValue("OAuth " + YADLoginManager.sharedInstance.getToken(), forHTTPHeaderField: "Authorization")
-        videoView.sd_setImage(with: NSURL(string: video.previewURL) as! URL, placeholderImage: #imageLiteral(resourceName: "video_view")
+        videoView.sd_setImage(with: NSURL(string: video.previewURL) as! URL, placeholderImage: #imageLiteral(resourceName: "video_play"))
     }
 
 }
