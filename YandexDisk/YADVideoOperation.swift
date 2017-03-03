@@ -52,11 +52,11 @@ class YADVideoOperation: Operation
                 
                 self.internetTask = YADGlobalAPI_WRAPPER.getDownloadLink(withPath: path, successBlock: { (jsonResponse) in
                     
-                    fullSizeURL = jsonResponse["href"].stringValue
-                    
-                    
+                     fullSizeURL = jsonResponse["href"].stringValue
                     
                 }, failureBlock: self.failure)
+                
+               
                 
                 let localPhotoModel = YADVideoModel(withResourceID: resourceID, name: name, path: path, previewURL: previewURL, fullSizeURL: fullSizeURL, created: created)
                 outArray.add(localPhotoModel)
