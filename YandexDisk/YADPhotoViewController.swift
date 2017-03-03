@@ -56,7 +56,7 @@ extension YADPhotoViewController: UICollectionViewDataSource, UICollectionViewDe
 {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
     {
-        print("\n\nмоделей в массиве в VC - \(presenter!.getModelsCount())")
+//        print("\n\nмоделей в массиве в VC - \(presenter!.getModelsCount())")
         return presenter!.getModelsCount()
     }
     
@@ -64,7 +64,7 @@ extension YADPhotoViewController: UICollectionViewDataSource, UICollectionViewDe
     {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: self.kPhotoListCellReuseIdentifier, for: indexPath) as! YADPhotoCollectionViewCell
         let model = self.presenter!.getModel(atIndexPath: indexPath as NSIndexPath) as! YADPhotoModel
-        print("имя файла в VC - \(model.name)\n\n")
+//        print("имя файла в VC - \(model.name)\n\n")
         cell.configureSelf(photo: model)
         return cell
     }
@@ -72,8 +72,6 @@ extension YADPhotoViewController: UICollectionViewDataSource, UICollectionViewDe
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize
     {
         return CGSize(width: (collectionView.frame.width - 4) / 3, height: (collectionView.frame.width - 4) / 3)
-//        return CGSize(width: 100, height: 100)
-
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat
@@ -85,5 +83,11 @@ extension YADPhotoViewController: UICollectionViewDataSource, UICollectionViewDe
     {
         return 1
     }
+    
+//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath)
+//    {
+//        let model = self.presenter!.getModel(atIndexPath: indexPath as NSIndexPath) as! YADPhotoModel
+//        
+//    }
 
 }

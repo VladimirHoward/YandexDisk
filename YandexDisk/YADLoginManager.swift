@@ -34,7 +34,7 @@ extension YADLoginManager
         let request = NSURLRequest(url: NSURL(string: YADConst.kLoginURL) as! URL)
         webView.loadRequest(request as URLRequest)
         webView.delegate = self
-        print("3. Перенаправили блоки, послали запрос в космос, присвоили делегата webView")
+//        print("3. Перенаправили блоки, послали запрос в космос, присвоили делегата webView")
     }
 }
 
@@ -48,13 +48,13 @@ extension YADLoginManager: UIWebViewDelegate
         {
             if requestURL.scheme == "yadapp"
             {
-                print("5. строка второго запроса - \(requestURL)")
+//                print("5. строка второго запроса - \(requestURL)")
                 //                print("URL схема второго - \(requestURL.scheme)")
                 
                 let set = CharacterSet(charactersIn: "#=&")
                 let arr = String(describing: requestURL).components(separatedBy: set)
                 let token = arr[2]
-                print("токен - \(token)")
+//                print("токен - \(token)")
                 
                 setToken(withToken: token)
                 print("7. все збс, всплываем во VC через successBlock")
@@ -64,7 +64,7 @@ extension YADLoginManager: UIWebViewDelegate
                 return false
             }
             
-            print("4. строка первого запроса - \(requestURL)")
+//            print("4. строка первого запроса - \(requestURL)")
             //            print("URL схема первого - \(requestURL.scheme)")
             
             return true
@@ -81,7 +81,7 @@ extension YADLoginManager: UIWebViewDelegate
     {
         _ = YADTokenFabric.createOrUpdateToken(withToken: token, context: YADCoreDataManager.sharedInstance.managedObjectContext)
         YADCoreDataManager.sharedInstance.save()
-        print("6. заводим токен в кордате, сохраняем в контекст")
+//        print("6. заводим токен в кордате, сохраняем в контекст")
     }
     
 }

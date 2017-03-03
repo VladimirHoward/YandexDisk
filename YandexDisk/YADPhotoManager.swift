@@ -15,4 +15,10 @@ class YADPhotoManager
         let operation = YADPhotoOperation(withLimit: limit, offset: offset, success: success, failure: failure)
         YADOperationManager.addBusinessLogicOperation(op: operation, cancellingQueue: true)
     }
+    
+    class func getLink (withModel model: YADPhotoModel, success: @escaping (String) -> Void, failure: @escaping (Int) -> Void)
+    {
+        let operation = YADPhotoLinkGetOperation(withPath: model.path, success: success, failure: failure)
+        YADOperationManager.addBusinessLogicOperation(op: operation, cancellingQueue: true)
+    }
 }
