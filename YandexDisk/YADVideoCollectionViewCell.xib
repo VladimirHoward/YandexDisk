@@ -11,24 +11,34 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="YADVideoCollectionViewCell" customModule="YandexDisk" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dzt-xJ-9rI">
-                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                        <rect key="frame" x="0.0" y="0.0" width="100" height="84"/>
                     </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eey-WR-t9n">
+                        <rect key="frame" x="8" y="81" width="84" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
             </view>
             <constraints>
-                <constraint firstItem="dzt-xJ-9rI" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="H2H-qk-7hT"/>
-                <constraint firstAttribute="trailing" secondItem="dzt-xJ-9rI" secondAttribute="trailing" id="Nl3-SW-zYq"/>
-                <constraint firstItem="dzt-xJ-9rI" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="W4o-K6-lym"/>
-                <constraint firstAttribute="bottom" secondItem="dzt-xJ-9rI" secondAttribute="bottom" id="wwt-wZ-Rgs"/>
+                <constraint firstItem="dzt-xJ-9rI" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="002-7d-6N4"/>
+                <constraint firstItem="Eey-WR-t9n" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="Agq-ic-BkL"/>
+                <constraint firstItem="dzt-xJ-9rI" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="RcK-lE-Rae"/>
+                <constraint firstAttribute="trailing" secondItem="dzt-xJ-9rI" secondAttribute="trailing" id="WwT-Tg-HJU"/>
+                <constraint firstAttribute="bottom" secondItem="dzt-xJ-9rI" secondAttribute="bottom" constant="16" id="bPh-cu-MGe"/>
+                <constraint firstAttribute="trailing" secondItem="Eey-WR-t9n" secondAttribute="trailing" constant="8" id="beM-Qh-NKH"/>
+                <constraint firstItem="Eey-WR-t9n" firstAttribute="top" secondItem="dzt-xJ-9rI" secondAttribute="bottom" id="nos-66-HOs"/>
             </constraints>
             <connections>
+                <outlet property="videoName" destination="Eey-WR-t9n" id="3SA-VQ-Vct"/>
                 <outlet property="videoView" destination="dzt-xJ-9rI" id="aFa-yk-e1X"/>
             </connections>
         </collectionViewCell>
