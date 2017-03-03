@@ -50,14 +50,6 @@ class YADPhotoOperation: Operation
                 let created = photo["created"].stringValue
                 var fullSizeURL = ""
                 
-                self.internetTask = YADGlobalAPI_WRAPPER.getDownloadLink(withPath: path, successBlock: { (jsonResponse) in
-                    
-                    fullSizeURL = jsonResponse["href"].stringValue
-                    
-                    
-                    
-                }, failureBlock: self.failure)
-                
                 let localPhotoModel = YADPhotoModel(withResourceID: resourceID, name: name, path: path, previewURL: previewURL, fullSizeURL: fullSizeURL, created: created)
                 outArray.add(localPhotoModel)
 
@@ -65,7 +57,7 @@ class YADPhotoOperation: Operation
             
             if (self.isCancelled != true)
             {
-                print("количество моделей в массиве после парсинга в Операции - \(outArray.count)")
+//                print("количество моделей в массиве после парсинга в Операции - \(outArray.count)")
                 self.success(outArray, jsonOffset)
             }
             else
