@@ -75,7 +75,7 @@ class YADPhotoPresenter: YADBasePresenter
                 {
                     self?.dataSource.addObjects(from: data as! [Any])
                     self?.jsonModelCount = data.count
-                    print("количество объектов после парсинга в Presentere - \(data.count)")
+//                    print("количество объектов после парсинга в Presentere - \(data.count)")
                     self?.view?.reloadData()
                 }
                 
@@ -84,5 +84,25 @@ class YADPhotoPresenter: YADBasePresenter
         }, failure: {[weak self] (errorCode) in
         
         })
+    }
+    
+    func getLink (withModel model: YADPhotoModel)
+    {
+        
+        var linkToCell = ""
+        
+        YADPhotoManager.getLink(withModel: model, success: { [weak self] (link) in
+            
+            DispatchQueue.main.async {
+                
+                if (self != nil)
+                {
+                    linkToCell = link
+                }
+            }
+            }, failure: {[weak self] (errorCode) in
+        
+        })
+        
     }
 }

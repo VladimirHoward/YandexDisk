@@ -13,6 +13,7 @@
 		896446C51E62DF7100BBDFAF /* YADPhotoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896446C41E62DF7100BBDFAF /* YADPhotoModel.swift */; };
 		896446C91E62F55400BBDFAF /* YADPhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896446C71E62F55400BBDFAF /* YADPhotoCollectionViewCell.swift */; };
 		896446CA1E62F55400BBDFAF /* YADPhotoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 896446C81E62F55400BBDFAF /* YADPhotoCollectionViewCell.xib */; };
+		8983613D1E65B5960097A000 /* YADPhotoLinkGetOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8983613C1E65B5960097A000 /* YADPhotoLinkGetOperation.swift */; };
 		89C5D1621E6209D400D2B145 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89C5D1611E6209D400D2B145 /* SwiftyJSON.framework */; };
 		89C5D1641E6209D800D2B145 /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89C5D1631E6209D800D2B145 /* SDWebImage.framework */; };
 		89C5D1661E6209DB00D2B145 /* MWPhotoBrowser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89C5D1651E6209DB00D2B145 /* MWPhotoBrowser.framework */; };
@@ -72,6 +73,7 @@
 		896446C41E62DF7100BBDFAF /* YADPhotoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YADPhotoModel.swift; sourceTree = "<group>"; };
 		896446C71E62F55400BBDFAF /* YADPhotoCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YADPhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		896446C81E62F55400BBDFAF /* YADPhotoCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YADPhotoCollectionViewCell.xib; sourceTree = "<group>"; };
+		8983613C1E65B5960097A000 /* YADPhotoLinkGetOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YADPhotoLinkGetOperation.swift; sourceTree = "<group>"; };
 		89C5D1611E6209D400D2B145 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "../../Library/Developer/Xcode/DerivedData/YandexDisk-edkqnuurckcodvbjapdtolhqucgq/Build/Products/Debug-iphonesimulator/SwiftyJSON/SwiftyJSON.framework"; sourceTree = "<group>"; };
 		89C5D1631E6209D800D2B145 /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = "Pods/../build/Debug-iphoneos/SDWebImage/SDWebImage.framework"; sourceTree = "<group>"; };
 		89C5D1651E6209DB00D2B145 /* MWPhotoBrowser.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MWPhotoBrowser.framework; path = "Pods/../build/Debug-iphoneos/MWPhotoBrowser/MWPhotoBrowser.framework"; sourceTree = "<group>"; };
@@ -254,6 +256,7 @@
 			children = (
 				896446C61E62F51300BBDFAF /* Custom Cell */,
 				89C5D1A71E620DA300D2B145 /* YADPhotoOperation.swift */,
+				8983613C1E65B5960097A000 /* YADPhotoLinkGetOperation.swift */,
 				89C5D1A91E620DAB00D2B145 /* YADPhotoManager.swift */,
 				89C5D1AB1E620DB700D2B145 /* YADPhotoViewController.swift */,
 				89C5D1AD1E620DBF00D2B145 /* Photo.storyboard */,
@@ -531,6 +534,7 @@
 				89C5D1A41E620D3700D2B145 /* YADVideoAPI_WRAPPER.swift in Sources */,
 				89C5D17E1E620B5700D2B145 /* YADViewControllerFabric.swift in Sources */,
 				89C5D19A1E620CCA00D2B145 /* YADMusicPresenter.swift in Sources */,
+				8983613D1E65B5960097A000 /* YADPhotoLinkGetOperation.swift in Sources */,
 				89C5D1841E620B9600D2B145 /* YADSettingsViewController.swift in Sources */,
 				89C5D1B21E620DD800D2B145 /* YADPhotoPresenter.swift in Sources */,
 				89C5D1A61E620D4200D2B145 /* YADVideoPresenter.swift in Sources */,
