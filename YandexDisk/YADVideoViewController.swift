@@ -8,7 +8,8 @@
 
 import UIKit
 
-class YADVideoViewController: UIViewController {
+class YADVideoViewController: YADBaseViewController
+{
     
     let kVideoListCellNib = UINib(nibName: "YADVideoCollectionViewCell", bundle: nil)
     let kVideoListCellReuseIdentifier = "kVideoListCellReuseIdentifier"
@@ -30,7 +31,6 @@ class YADVideoViewController: UIViewController {
             presenter?.refreshData()
         }
     }
-
 }
 
 //MARK: процедуры YADBaseView
