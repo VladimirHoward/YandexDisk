@@ -11,10 +11,7 @@ import UIKit
 
 class YADBaseViewController:UIViewController
 {
-    func test()
-    {
-        
-    }
+    
 }
 
 @objc protocol YADBaseView
