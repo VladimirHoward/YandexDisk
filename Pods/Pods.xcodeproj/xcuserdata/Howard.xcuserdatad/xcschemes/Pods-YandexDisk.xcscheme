@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "5AE47E3AEFC6B55EF3B9580545860DC7"
+               BlueprintIdentifier = "396B2FDD92E21C6180D582AF41FC6263"
                BuildableName = "Pods_YandexDisk.framework"
                BlueprintName = "Pods-YandexDisk"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "5AE47E3AEFC6B55EF3B9580545860DC7"
+            BlueprintIdentifier = "396B2FDD92E21C6180D582AF41FC6263"
             BuildableName = "Pods_YandexDisk.framework"
             BlueprintName = "Pods-YandexDisk"
             ReferencedContainer = "container:Pods.xcodeproj">

@@ -32,7 +32,7 @@ class YADGlobalAPI_WRAPPER
             }
         }
         
-        print("строка запроса - \(requestString)")
+//        print("строка запроса - \(requestString)")
         
         let request = NSMutableURLRequest ()
         request.httpMethod = "GET"
@@ -63,7 +63,7 @@ class YADGlobalAPI_WRAPPER
             }
         }
         
-        print("строка запроса - \(requestString)")
+//        print("строка запроса - \(requestString)")
         
         let request = NSMutableURLRequest ()
         request.httpMethod = "POST"
@@ -171,7 +171,7 @@ extension YADGlobalAPI_WRAPPER
             {
                 let json = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers)
                 let swiftyJSON = JSON(json)
-                print("ответ - \(swiftyJSON)")
+//                print("ответ - \(swiftyJSON)")
                 successBlock(swiftyJSON)
             }
             catch

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import HMPhotoBrowser
 
 //MARK: Жизненный цикл
 class YADPhotoViewController: UIViewController
@@ -91,3 +92,9 @@ extension YADPhotoViewController: UICollectionViewDataSource, UICollectionViewDe
 //    }
 
 }
+
+//MARK: HMPhotoBrowser delegat
+
+
+
+

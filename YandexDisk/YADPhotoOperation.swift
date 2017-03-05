@@ -37,7 +37,7 @@ class YADPhotoOperation: Operation
         
         internetTask = YADGlobalAPI_WRAPPER.getFileList(withLimit: limit, offset: offset, mediaType: YADConst.URLConst.Arguments.kImageType as String, successBlock: { (jsonResponse) in
             
-            let outArray = NSMutableArray()
+            let outArray = NSMutableArray() //создается после парсинга первого json, строка прямой ссылки пустая
             let photos = jsonResponse["items"].arrayValue
             let jsonOffset = jsonResponse["offset"].intValue
             
@@ -54,6 +54,7 @@ class YADPhotoOperation: Operation
                 outArray.add(localPhotoModel)
 
             }
+            
             
             if (self.isCancelled != true)
             {
@@ -73,5 +74,7 @@ class YADPhotoOperation: Operation
             semaphore.signal()
             
         })
+    
+        _ = semaphore.wait(timeout: .distantFuture)
     }
 }

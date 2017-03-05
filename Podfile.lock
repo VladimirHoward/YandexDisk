@@ -1,5 +1,7 @@
 PODS:
   - DACircularProgress (2.3.1)
+  - HMPhotoBrowser (1.0.6):
+    - YYWebImage
   - MBProgressHUD (0.9.2)
   - MWPhotoBrowser (2.1.2):
     - DACircularProgress (~> 2.3)
@@ -9,19 +11,31 @@ PODS:
     - SDWebImage/Core (= 3.8.2)
   - SDWebImage/Core (3.8.2)
   - SwiftyJSON (3.1.4)
+  - YYCache (1.0.4)
+  - YYImage (1.0.4):
+    - YYImage/Core (= 1.0.4)
+  - YYImage/Core (1.0.4)
+  - YYWebImage (1.0.5):
+    - YYCache
+    - YYImage
 
 DEPENDENCIES:
+  - HMPhotoBrowser
   - MWPhotoBrowser
   - SDWebImage
   - SwiftyJSON
 
 SPEC CHECKSUMS:
   DACircularProgress: 4dd437c0fc3da5161cb289e07ac449493d41db71
+  HMPhotoBrowser: 961f9de8eb99da0cc45068d892401faac80c46ca
   MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
   MWPhotoBrowser: 5836d7aa041dc05a13de380c246826578adc5ea5
   SDWebImage: '098e97e6176540799c27e804c96653ee0833d13c'
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
+  YYCache: 8105b6638f5e849296c71f331ff83891a4942952
+  YYImage: 1e1b62a9997399593e4b9c4ecfbbabbf1d3f3b54
+  YYWebImage: 5f7f36aee2ae293f016d418c7d6ba05c4863e928
 
-PODFILE CHECKSUM: 4bfe1e9bfddc11ac8eca4e4da03ec147493d0da0
+PODFILE CHECKSUM: a66526b79305745c676885ae9af8402065a8ca18
 
 COCOAPODS: 1.2.0.rc.1
