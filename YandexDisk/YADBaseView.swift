@@ -7,6 +7,12 @@
 //
 
 import Foundation
+import UIKit
+
+class YADBaseViewController:UIViewController
+{
+    
+}
 
 @objc protocol YADBaseView
 {
