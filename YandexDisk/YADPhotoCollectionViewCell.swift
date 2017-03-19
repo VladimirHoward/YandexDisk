@@ -13,17 +13,32 @@ class YADPhotoCollectionViewCell: UICollectionViewCell
 {
 
     @IBOutlet weak var photoView: UIImageView!
+    @IBOutlet weak var testLabel: UILabel!
+    @IBOutlet weak var scrimView: UIView!
     
+    var bigView = UIImageView()
+    
+    var gradientLayer : CAGradientLayer?
     
     func configureSelf(photo: YADPhotoModel)
     {
-        print("ссылка на fullsize - \(photo.fullSizeURL)")
-//        let tempURL = "https://downloader.disk.yandex.ru/preview/7843249fd804ea433928ff75b552b19d7144decfc2eddd3392c5772703cb29d0/inf/oD1hYIypITUP4CGETgjJtp22xnjFaL2yNIjrUOOltN3v1dfQjbvrm0SuA89KUfX1mlZe43XEMLgVxtupj6iHkw%3D%3D?uid=470326164&filename=1280paris_1008.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&tknv=v2&size=S&crop=0"
-        
-//        photoView.sd_setImage(with: NSURL(string: tempURL) as! URL)
         SDWebImageDownloader.shared().setValue("OAuth " + YADLoginManager.sharedInstance.getToken(), forHTTPHeaderField: "Authorization")
+        
         photoView.sd_setImage(with: NSURL(string: photo.previewURL) as! URL, placeholderImage: #imageLiteral(resourceName: "placeholder2"))
         
+        testLabel.text = photo.name
+        
+        if (gradientLayer == nil)
+        {
+            self.setNeedsLayout()
+            self.layoutIfNeeded()
+            
+            let layer = CAGradientLayer()
+            layer.colors = [UIColor.clear.cgColor, UIColor.black.cgColor]
+            layer.frame = CGRect(x: 0.0, y: 0.0, width: scrimView.frame.width, height: scrimView.frame.height)
+            
+            scrimView.layer.addSublayer(layer)
+            gradientLayer = layer
+        }
     }
-
 }

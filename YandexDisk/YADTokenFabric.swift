@@ -11,6 +11,9 @@ import CoreData
 
 class YADTokenFabric
 {
+    
+//    static let lock = NSNumber(value: 0.5)
+    static var tempToken = ""
     //MARK: создание или обновление текущего токена для приложения
     class func createOrUpdateToken (withToken enterToken: String, context: NSManagedObjectContext) -> YADToken
     {
@@ -36,17 +39,28 @@ class YADTokenFabric
     }
     
     //MARK: получение текущего токена
-    class func currentTokenInMainContext () -> YADToken?
+    class func currentTokenInMainContext () -> String?
     {
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "YADToken")
-        let fetchResults = try? YADCoreDataManager.sharedInstance.managedObjectContext.fetch(fetchRequest) as! [YADToken]
-        
-        if ( fetchResults!.count == 1 )
+//        objc_sync_enter(lock)
+        if tempToken == ""
         {
-            let token = fetchResults![0]
-            return token
+            let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "YADToken")
+            let fetchResults = try? YADCoreDataManager.sharedInstance.managedObjectContext.fetch(fetchRequest) as! [YADToken]
+            
+            if ( fetchResults!.count == 1 )
+            {
+                tempToken = fetchResults![0].token
+                //            objc_sync_exit(lock)
+                return tempToken
+            }
+
+        }
+        else
+        {
+            return tempToken
         }
         
+//        objc_sync_exit(lock)
         return nil
     }
     

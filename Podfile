@@ -6,5 +6,6 @@ target 'YandexDisk' do
 pod 'SDWebImage'
 pod 'SwiftyJSON'
 pod 'MWPhotoBrowser'
+pod 'MBProgressHUD'
 
 end

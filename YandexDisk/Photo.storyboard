@@ -12,7 +12,7 @@
         <!--Фото-->
         <scene sceneID="zux-Zc-W1b">
             <objects>
-                <viewController storyboardIdentifier="PhotoView" id="3tU-ig-FoI" customClass="YADPhotoViewController" customModule="YandexDisk" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="3tU-ig-FoI" customClass="YADPhotoViewController" customModule="YandexDisk" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="rU6-RG-Clc"/>
                         <viewControllerLayoutGuide type="bottom" id="oFC-UC-F2E"/>
@@ -22,7 +22,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="mcQ-Ma-g8l">
-                                <rect key="frame" x="0.0" y="20" width="375" height="598"/>
+                                <rect key="frame" x="0.0" y="1" width="375" height="666"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="OAx-ai-lEK">
                                     <size key="itemSize" width="50" height="50"/>
@@ -30,51 +30,42 @@
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="JoQ-eX-DX0">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </view>
-                                    </collectionViewCell>
-                                </cells>
+                                <cells/>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="mcQ-Ma-g8l" firstAttribute="leading" secondItem="xjc-mG-Yse" secondAttribute="leadingMargin" constant="-16" id="6ZA-X9-pYo"/>
                             <constraint firstItem="oFC-UC-F2E" firstAttribute="top" secondItem="mcQ-Ma-g8l" secondAttribute="bottom" id="IYq-8b-bdV"/>
-                            <constraint firstItem="mcQ-Ma-g8l" firstAttribute="top" secondItem="rU6-RG-Clc" secondAttribute="bottom" id="oDP-3w-Vhi"/>
+                            <constraint firstItem="mcQ-Ma-g8l" firstAttribute="top" secondItem="rU6-RG-Clc" secondAttribute="bottom" constant="-63" id="oDP-3w-Vhi"/>
                             <constraint firstAttribute="trailingMargin" secondItem="mcQ-Ma-g8l" secondAttribute="trailing" constant="-16" id="u3p-dR-Qea"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Фото" image="photo-camera" id="uOt-jg-BPY"/>
+                    <navigationItem key="navigationItem" id="6BU-rI-69P"/>
                     <connections>
                         <outlet property="collectionView" destination="mcQ-Ma-g8l" id="TgZ-Sk-zee"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YxZ-tH-2XW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="349.60000000000002" y="-0.44977511244377816"/>
+            <point key="canvasLocation" x="-631" y="125"/>
         </scene>
-        <!--Base Tabbar Controller-->
-        <scene sceneID="6Cr-Bk-eVK">
+        <!--Navigation Controller-->
+        <scene sceneID="75z-TG-yKM">
             <objects>
-                <tabBarController id="DWm-Lx-5q7" customClass="YADBaseTabbarController" customModule="YandexDisk" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="nIU-Tm-6po">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                <navigationController storyboardIdentifier="PhotoView" id="CDv-CN-0Lx" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="hGJ-kc-Zux">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    </tabBar>
+                    </navigationBar>
                     <connections>
-                        <segue destination="3tU-ig-FoI" kind="relationship" relationship="viewControllers" id="Fy8-Zs-v2u"/>
+                        <segue destination="3tU-ig-FoI" kind="relationship" relationship="rootViewController" id="1Yn-mK-oaR"/>
                     </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Vq3-TW-kfh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aOR-aj-odt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-476" y="0.0"/>
+            <point key="canvasLocation" x="-1474" y="125"/>
         </scene>
     </scenes>
     <resources>

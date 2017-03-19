@@ -46,6 +46,7 @@ class YADConst
             static let kClientID: NSString = "client_id"
             static let kImageType: NSString = "image"
             static let kVideoType: NSString = "video"
+            static let kSortByDate: NSString = "-created"
         }
     }
     
