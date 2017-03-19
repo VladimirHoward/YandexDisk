@@ -16,9 +16,15 @@ class YADPhotoManager
         YADOperationManager.addBusinessLogicOperation(op: operation, cancellingQueue: true)
     }
     
-    class func getLink (withModel model: YADPhotoModel, success: @escaping (String) -> Void, failure: @escaping (Int) -> Void)
+    class func uploadPhoto (withName path: String, url: String, success: @escaping (String) -> Void, failure: @escaping (Int) -> Void)
     {
-        let operation = YADPhotoLinkGetOperation(withPath: model.path, success: success, failure: failure)
+        let operation = YADPhotoUploadOperation(withName: path, url: url, success: success, failure: failure)
         YADOperationManager.addBusinessLogicOperation(op: operation, cancellingQueue: true)
+    }
+    
+    class func getLink (withPath path: String, success: @escaping (String) -> Void, failure: @escaping (Int) -> Void)
+    {
+        let operation = YADPhotoLinkGetOperation(withPhotoModel: path, success: success, failure: failure)
+        YADOperationManager.addServiceOperation(op: operation)
     }
 }

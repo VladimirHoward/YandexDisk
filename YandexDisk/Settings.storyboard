@@ -19,13 +19,29 @@
                     <view key="view" contentMode="scaleToFill" id="DvQ-Av-l0p">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="СОСИ ПИСОС" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W9A-GK-LFd">
+                                <rect key="frame" x="53" y="315" width="269" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="269" id="Xmb-BR-dZS"/>
+                                    <constraint firstAttribute="height" constant="37" id="avr-gD-Dpi"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="31"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="W9A-GK-LFd" firstAttribute="centerX" secondItem="DvQ-Av-l0p" secondAttribute="centerX" id="AXq-l3-L0h"/>
+                            <constraint firstItem="W9A-GK-LFd" firstAttribute="centerY" secondItem="DvQ-Av-l0p" secondAttribute="centerY" id="DSO-WY-w6u"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Настройки" image="settings-work-tool" id="Hnj-5b-rMB"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6j6-xZ-hhM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="412" y="-85"/>
+            <point key="canvasLocation" x="412" y="-85.007496251874073"/>
         </scene>
         <!--Base Tabbar Controller-->
         <scene sceneID="G79-53-I1h">

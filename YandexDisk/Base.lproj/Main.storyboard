@@ -52,10 +52,10 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="qnd-od-dDm" kind="relationship" relationship="viewControllers" id="Pln-PK-i26"/>
                         <segue destination="vN1-cj-vsa" kind="relationship" relationship="viewControllers" id="Pxo-zH-c8i"/>
                         <segue destination="HNJ-2Z-fHW" kind="relationship" relationship="viewControllers" id="KIY-Z7-k2Q"/>
                         <segue destination="BAO-ga-Ryb" kind="relationship" relationship="viewControllers" id="1vX-uF-C1R"/>
+                        <segue destination="0j5-kr-lHU" kind="relationship" relationship="viewControllers" id="YOf-IL-Ddl"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gHI-5k-Mdg" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -63,14 +63,14 @@
             <point key="canvasLocation" x="846" y="37"/>
         </scene>
         <!--SettingView-->
-        <scene sceneID="ohD-CJ-jeA">
+        <scene sceneID="dlk-ml-riX">
             <objects>
-                <viewControllerPlaceholder storyboardName="Settings" referencedIdentifier="SettingView" id="qnd-od-dDm" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Настройки" image="settings-work-tool" id="LQm-jN-8t9"/>
+                <viewControllerPlaceholder storyboardName="Settings" referencedIdentifier="SettingView" id="0j5-kr-lHU" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Настройки" image="settings-work-tool" id="tQM-VJ-BSh"/>
                 </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="DPb-So-0cP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dri-0t-U8Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1528" y="-84"/>
+            <point key="canvasLocation" x="1530" y="166"/>
         </scene>
         <!--PhotoView-->
         <scene sceneID="xz2-9k-taP">

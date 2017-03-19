@@ -11,6 +11,7 @@ import Foundation
 class YADOperationManager
 {
     private static let businessLogicOperationQueue = OperationQueue()
+    private static let serviceLogicOperation = OperationQueue()
     
     class func addBusinessLogicOperation (op: Operation, cancellingQueue flag: Bool)
     {
@@ -22,5 +23,12 @@ class YADOperationManager
         }
         
         businessLogicOperationQueue.addOperation(op)
+
+    }
+    
+    class func addServiceOperation (op: Operation)
+    {
+        serviceLogicOperation.maxConcurrentOperationCount = 1
+        serviceLogicOperation.addOperation(op)
     }
 }

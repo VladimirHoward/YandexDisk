@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import MWPhotoBrowser
+import SDWebImage
 
 class YADPhotoModel: NSObject
 {
@@ -26,4 +28,37 @@ class YADPhotoModel: NSObject
         self.fullSizeURL = fullSizeURL
         self.created = created
     }
+    
+//    var underlyingImage: UIImage? = nil
+//    
+//    func loadUnderlyingImageAndNotify()
+//    {
+//        SDWebImageManager.shared().downloadImage(with: URL(string: fullSizeURL)!, options: .retryFailed, progress: nil) { (image, error, cacheType, cached, url) in
+//            
+//            if (image != nil)
+//            {
+//                self.underlyingImage = image
+//                self.reportImageLoaded()
+//            }
+//        }
+//    }
+//    
+//    func performLoadUnderlyingImageAndNotify()
+//    {
+//        
+//    }
+//    
+//    func unloadUnderlyingImage()
+//    {
+//        underlyingImage = nil
+//    }
+//    
+//    private func reportImageLoaded ()
+//    {
+//        DispatchQueue.main.async {
+//            
+//            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "MWPHOTO_LOADING_DID_END_NOTIFICATION"), object: self)
+//            
+//        }
+//    }
 }

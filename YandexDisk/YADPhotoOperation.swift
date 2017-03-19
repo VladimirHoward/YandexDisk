@@ -35,7 +35,7 @@ class YADPhotoOperation: Operation
     {
         let semaphore = DispatchSemaphore(value: 0)
         
-        internetTask = YADGlobalAPI_WRAPPER.getFileList(withLimit: limit, offset: offset, mediaType: YADConst.URLConst.Arguments.kImageType as String, successBlock: { (jsonResponse) in
+        internetTask = YADPhotoAPI_WRAPPER.getPhotoList(withLimit: limit, offset: offset, mediaType: YADConst.URLConst.Arguments.kImageType as String, sort: YADConst.URLConst.Arguments.kSortByDate as String, successBlock: { (jsonResponse) in
             
             let outArray = NSMutableArray() //создается после парсинга первого json, строка прямой ссылки пустая
             let photos = jsonResponse["items"].arrayValue

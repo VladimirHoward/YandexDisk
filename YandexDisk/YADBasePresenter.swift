@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import MBProgressHUD
 
 
 @objc protocol YADBasePresenter
@@ -17,4 +18,7 @@ import Foundation
     func getModel (atIndexPath indexPath: NSIndexPath) -> Any
     func getModelsCount () -> Int
     func loadModels (withOffset offset: Int, and count: Int) -> Void
+    @objc optional func photoGetLink (withPath path: String, hud: MBProgressHUD) -> Void
+    @objc optional func getSimpleModel (atIndexPath indexPath: NSIndexPath) -> Any
+    @objc optional func uploadPhoto (WithName path: String, url: String) -> Void
 }

@@ -10,10 +10,6 @@
 		844780DF1E634D61006FA3C0 /* YADVideoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844780DE1E634D61006FA3C0 /* YADVideoModel.swift */; };
 		844780E31E634EDC006FA3C0 /* YADVideoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844780E11E634EDC006FA3C0 /* YADVideoCollectionViewCell.swift */; };
 		844780E41E634EDC006FA3C0 /* YADVideoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 844780E21E634EDC006FA3C0 /* YADVideoCollectionViewCell.xib */; };
-		893AC4161E69F33F00B5CCED /* HMPhotoBrowser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 893AC4151E69F33F00B5CCED /* HMPhotoBrowser.framework */; };
-		893AC4181E69F34300B5CCED /* YYCache.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 893AC4171E69F34300B5CCED /* YYCache.framework */; };
-		893AC41A1E69F34600B5CCED /* YYImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 893AC4191E69F34500B5CCED /* YYImage.framework */; };
-		893AC41C1E69F34900B5CCED /* YYWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 893AC41B1E69F34900B5CCED /* YYWebImage.framework */; };
 		893AC4201E69F45600B5CCED /* YADMusicCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893AC41E1E69F45600B5CCED /* YADMusicCollectionViewCell.swift */; };
 		893AC4211E69F45600B5CCED /* YADMusicCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 893AC41F1E69F45600B5CCED /* YADMusicCollectionViewCell.xib */; };
 		896446C51E62DF7100BBDFAF /* YADPhotoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896446C41E62DF7100BBDFAF /* YADPhotoModel.swift */; };
@@ -68,6 +64,7 @@
 		89CC0F081E6208D300051700 /* YandexDisk.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 89CC0F061E6208D300051700 /* YandexDisk.xcdatamodeld */; };
 		89CC0F0A1E6208D300051700 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89CC0F091E6208D300051700 /* Assets.xcassets */; };
 		89CC0F0D1E6208D300051700 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89CC0F0B1E6208D300051700 /* LaunchScreen.storyboard */; };
+		89FB64711E7AF453001B86E1 /* YADPhotoUploadOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FB64701E7AF453001B86E1 /* YADPhotoUploadOperation.swift */; };
 		D3D7F7DCBCFFFDFEBB6F19CF /* Pods_YandexDisk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BE49D53CE0865CB5E5DF3E1 /* Pods_YandexDisk.framework */; };
 /* End PBXBuildFile section */
 
@@ -136,6 +133,7 @@
 		89CC0F091E6208D300051700 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		89CC0F0C1E6208D300051700 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89CC0F0E1E6208D300051700 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		89FB64701E7AF453001B86E1 /* YADPhotoUploadOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YADPhotoUploadOperation.swift; sourceTree = "<group>"; };
 		98C5028C0B8BEC14E65183CA /* Pods-YandexDisk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YandexDisk.release.xcconfig"; path = "Pods/Target Support Files/Pods-YandexDisk/Pods-YandexDisk.release.xcconfig"; sourceTree = "<group>"; };
 		B74452E7DB213C514D157E26 /* Pods-YandexDisk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YandexDisk.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YandexDisk/Pods-YandexDisk.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -145,10 +143,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				893AC41C1E69F34900B5CCED /* YYWebImage.framework in Frameworks */,
-				893AC41A1E69F34600B5CCED /* YYImage.framework in Frameworks */,
-				893AC4181E69F34300B5CCED /* YYCache.framework in Frameworks */,
-				893AC4161E69F33F00B5CCED /* HMPhotoBrowser.framework in Frameworks */,
 				89C5D16A1E6209E200D2B145 /* MBProgressHUD.framework in Frameworks */,
 				89C5D1681E6209DF00D2B145 /* DACircularProgress.framework in Frameworks */,
 				89C5D1661E6209DB00D2B145 /* MWPhotoBrowser.framework in Frameworks */,
@@ -282,6 +276,7 @@
 				896446C61E62F51300BBDFAF /* Custom Cell */,
 				89C5D1A71E620DA300D2B145 /* YADPhotoOperation.swift */,
 				8983613C1E65B5960097A000 /* YADPhotoLinkGetOperation.swift */,
+				89FB64701E7AF453001B86E1 /* YADPhotoUploadOperation.swift */,
 				89C5D1A91E620DAB00D2B145 /* YADPhotoManager.swift */,
 				89C5D1AB1E620DB700D2B145 /* YADPhotoViewController.swift */,
 				89C5D1AD1E620DBF00D2B145 /* Photo.storyboard */,
@@ -577,6 +572,7 @@
 				89CC0F001E6208D300051700 /* AppDelegate.swift in Sources */,
 				89C5D1C91E620FA800D2B145 /* YADBaseTabbarController.swift in Sources */,
 				89C5D1C11E620ED700D2B145 /* YADTokenFabric.swift in Sources */,
+				89FB64711E7AF453001B86E1 /* YADPhotoUploadOperation.swift in Sources */,
 				89C5D1901E620C8200D2B145 /* YADMusicOperation.swift in Sources */,
 				89C5D1BC1E620EA900D2B145 /* YADOperationManager.swift in Sources */,
 				89C5D1B01E620DCC00D2B145 /* YADPhotoAPI_WRAPPER.swift in Sources */,

@@ -57,7 +57,7 @@ extension YADLoginManager: UIWebViewDelegate
 //                print("токен - \(token)")
                 
                 setToken(withToken: token)
-                print("7. все збс, всплываем во VC через successBlock")
+//                print("7. все збс, всплываем во VC через successBlock")
                 self.successBlock?()
                 
                 
@@ -93,7 +93,7 @@ extension YADLoginManager
     {
         if let token = YADTokenFabric.currentTokenInMainContext()
         {
-            return token.token
+            return token
         }
         return ""
     }
