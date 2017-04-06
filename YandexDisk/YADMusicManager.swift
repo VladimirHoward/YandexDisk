@@ -11,4 +11,9 @@ import Foundation
 class YADMusicManager
 {
     
+    class func getSongs(withLimit limit: Int, offset: Int, success: @escaping (NSArray) -> Void, failure: @escaping (Int) -> Void)
+    {
+        let operation = YADMusicOperation(withLimit: limit, offset: offset, success: success, failure: failure)
+        YADOperationManager.addBusinessLogicOperation(op: operation, cancellingQueue: true)
+    }
 }

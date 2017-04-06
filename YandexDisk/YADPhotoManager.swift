@@ -25,6 +25,6 @@ class YADPhotoManager
     class func getLink (withPath path: String, success: @escaping (String) -> Void, failure: @escaping (Int) -> Void)
     {
         let operation = YADPhotoLinkGetOperation(withPhotoModel: path, success: success, failure: failure)
-        YADOperationManager.addServiceOperation(op: operation)
+        YADOperationManager.addServiceOperation(op: operation , cancellingQueue: true)
     }
 }

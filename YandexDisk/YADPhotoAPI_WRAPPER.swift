@@ -57,7 +57,7 @@ class YADPhotoAPI_WRAPPER:YADGlobalAPI_WRAPPER
         let agrsDictionary = NSMutableDictionary ()
         
         agrsDictionary.setObject("\(path)", forKey: YADConst.URLConst.Arguments.kPath)
-        agrsDictionary.setObject("\(url)", forKey: YADConst.URLConst.Arguments.kUploadURL)
+//        agrsDictionary.setObject("\(url)", forKey: YADConst.URLConst.Arguments.kUploadURL)
         
         let request = composeGenericHTTPGetRequest(forBaseURL: YADConst.kBaseURL, andMethod: YADConst.Scripts.kMethodFileUpload, withParameters: agrsDictionary)
         let task = URLSession.shared.dataTask(with: request as URLRequest) { (data, response, error) in

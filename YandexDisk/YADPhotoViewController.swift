@@ -31,6 +31,8 @@ class YADPhotoViewController: UIViewController
         return refreshControl
     }()
     
+    var browser : MWPhotoBrowser?
+    
     @IBOutlet weak var collectionView: UICollectionView!
     
     var presenter: YADBasePresenter?
@@ -64,8 +66,6 @@ class YADPhotoViewController: UIViewController
     func handleRefresh (refreshControl: UIRefreshControl)
     {
         presenter?.refreshData()
-        self.collectionView.reloadData()
-        refreshControl.endRefreshing()
     }
     
     //действия при нажатии на кнопку
@@ -93,6 +93,7 @@ extension YADPhotoViewController: YADBaseView
     
     func reloadData() -> Void
     {
+        refreshControl.endRefreshing()
         collectionView.reloadData()
     }
 }
@@ -110,16 +111,6 @@ extension YADPhotoViewController: UICollectionViewDataSource, UICollectionViewDe
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: self.kPhotoListCellReuseIdentifier, for: indexPath) as! YADPhotoCollectionViewCell
         
         let model = self.presenter!.getModel(atIndexPath: indexPath as NSIndexPath) as! YADPhotoModel
-        
-        if model.fullSizeURL == ""
-        {
-//            let progressHud = MBProgressHUD.showAdded(to: cell.photoView, animated: true)
-//            progressHud?.isUserInteractionEnabled = false
-//            progressHud?.opacity = 0.5
-//            progressHud?.backgroundColor = UIColor.clear
-            
-            presenter?.photoGetLink!(withPath: model.path, hud: MBProgressHUD())
-        }
         
         cell.configureSelf(photo: model)
         return cell
@@ -143,9 +134,24 @@ extension YADPhotoViewController: UICollectionViewDataSource, UICollectionViewDe
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath)
     {
         collectionView.deselectItem(at: indexPath, animated: true)
-        setUpAndPresentMWPhB(forModelIndex: indexPath.row)
-    }
+        
+        let model = presenter?.getSimpleModel!(atIndexPath: indexPath as NSIndexPath) as! YADPhotoModel
 
+        if model.fullSizeURL == ""
+        {
+            presenter?.photoGetLink!(withModel: model, success: { 
+                
+                DispatchQueue.main.async {
+                    self.browser?.reloadData()
+                }
+                
+            }, failure: { 
+                print("error in selection")
+            })
+        }
+        
+        self.setUpAndPresentMWPhB(forModelIndex: indexPath.row)
+    }
 }
 
 //MARK: реализация процедур MWPhotoBrowserDelegat
@@ -154,7 +160,7 @@ extension YADPhotoViewController: MWPhotoBrowserDelegate
 
     func setUpAndPresentMWPhB (forModelIndex modelIndex: Int)
     {
-        let browser = MWPhotoBrowser(delegate: self)
+        browser = MWPhotoBrowser(delegate: self)
         browser?.setCurrentPhotoIndex(UInt(modelIndex))
         
         self.navigationController!.pushViewController(browser!, animated: true)
@@ -170,6 +176,8 @@ extension YADPhotoViewController: MWPhotoBrowserDelegate
         let indexPath = NSIndexPath(row: Int(index), section: 0)
         let model = presenter!.getSimpleModel!(atIndexPath: indexPath) as! YADPhotoModel
         
+        //то, что ниже исправить по примеру нажатия
+        
         if model.fullSizeURL != ""
         {
             let mwPhoto = MWPhoto(url: URL(string: model.fullSizeURL))
@@ -177,8 +185,18 @@ extension YADPhotoViewController: MWPhotoBrowserDelegate
         }
         else
         {
+            presenter?.photoGetLink!(withModel: model, success: { 
+                
+                DispatchQueue.main.async {
+                    self.browser?.reloadData()
+                }
+                
+            }, failure: { 
+                print("error in browser")
+            })
             return MWPhoto()
         }
+        
     }
     
     func photoBrowser(_ photoBrowser: MWPhotoBrowser!, actionButtonPressedForPhotoAt index: UInt)
@@ -218,16 +236,21 @@ extension YADPhotoViewController: UIImagePickerControllerDelegate, UINavigationC
 {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any])
     {
+        
         if let pickedImageURL = info[UIImagePickerControllerReferenceURL] as? NSURL
         {
-            print("pickedImage - \(pickedImageURL)")
             
             let imageReps = PHAsset.fetchAssets(withALAssetURLs: [pickedImageURL as URL], options: nil)
             
-            let newURL = copyImageForNewURL(withAsset: imageReps[0])
             
-            presenter?.uploadPhoto!(WithName: "test-test", url: newURL)
+            let newURL = copyImageForNewURL(withAsset: imageReps[0], path: pickedImageURL)
+            
+            let prefix = NSDate.timeIntervalSinceReferenceDate
+            
+            presenter?.uploadPhoto!(WithName: "Image" + String(prefix), url: newURL)
         }
+        
+       
         
         dismiss(animated: true, completion: nil)
     }
@@ -237,22 +260,35 @@ extension YADPhotoViewController: UIImagePickerControllerDelegate, UINavigationC
         dismiss(animated: true, completion: nil)
     }
     
-    func copyImageForNewURL (withAsset asset: PHAsset) -> String
+    func copyImageForNewURL (withAsset asset: PHAsset, path: NSURL) -> String
     {
-        let docuPath = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.applicationDirectory, FileManager.SearchPathDomainMask.userDomainMask, true) as NSArray
-        let targetImgeURL = (docuPath[0] as! String) + "/IMG_test.PNG"
+        let docuPath = try! FileManager.default.url(for: .documentDirectory,
+                                               in: .userDomainMask,
+                                               appropriateFor: nil,
+                                               create: false)
+        
+        let targetImgeURL = docuPath.appendingPathComponent("IMG_test.jpg")
+        
         let phManager = PHImageManager.default()
         let options = PHImageRequestOptions()
         options.isSynchronous = true
+        
         phManager.requestImageData(for: asset, options: options)
         {   imageData,dataUTI,orientation,info in
             
-            if let newData:NSData = imageData as NSData?
+            if let newData: Data = imageData as Data?
             {
-                try! newData.write(toFile: targetImgeURL, atomically: true)
+                do {
+                    
+                    print("урл - \(targetImgeURL.absoluteString)")
+                    try newData.write(to: targetImgeURL)
+                }
+                catch let error as NSError {
+                    print("\(error)")
+                }
             }
         }
-        return (targetImgeURL)
+        return targetImgeURL.path
     }
 }
 

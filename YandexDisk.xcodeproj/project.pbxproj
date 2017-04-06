@@ -10,12 +10,16 @@
 		844780DF1E634D61006FA3C0 /* YADVideoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844780DE1E634D61006FA3C0 /* YADVideoModel.swift */; };
 		844780E31E634EDC006FA3C0 /* YADVideoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844780E11E634EDC006FA3C0 /* YADVideoCollectionViewCell.swift */; };
 		844780E41E634EDC006FA3C0 /* YADVideoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 844780E21E634EDC006FA3C0 /* YADVideoCollectionViewCell.xib */; };
-		893AC4201E69F45600B5CCED /* YADMusicCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893AC41E1E69F45600B5CCED /* YADMusicCollectionViewCell.swift */; };
-		893AC4211E69F45600B5CCED /* YADMusicCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 893AC41F1E69F45600B5CCED /* YADMusicCollectionViewCell.xib */; };
+		894C07BB1E810EC1005349C0 /* YADMusicModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894C07BA1E810EC1005349C0 /* YADMusicModel.swift */; };
+		894C07BE1E811ABF005349C0 /* YADMusicTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894C07BC1E811ABF005349C0 /* YADMusicTableViewCell.swift */; };
+		894C07BF1E811ABF005349C0 /* YADMusicTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 894C07BD1E811ABF005349C0 /* YADMusicTableViewCell.xib */; };
+		894C07C11E813D7C005349C0 /* StreamingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 894C07C01E813D7C005349C0 /* StreamingKit.framework */; };
 		896446C51E62DF7100BBDFAF /* YADPhotoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896446C41E62DF7100BBDFAF /* YADPhotoModel.swift */; };
 		896446C91E62F55400BBDFAF /* YADPhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896446C71E62F55400BBDFAF /* YADPhotoCollectionViewCell.swift */; };
 		896446CA1E62F55400BBDFAF /* YADPhotoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 896446C81E62F55400BBDFAF /* YADPhotoCollectionViewCell.xib */; };
 		8983613D1E65B5960097A000 /* YADPhotoLinkGetOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8983613C1E65B5960097A000 /* YADPhotoLinkGetOperation.swift */; };
+		899CA6F21E83D064008332D9 /* YADPlayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 899CA6F11E83D064008332D9 /* YADPlayerViewController.xib */; };
+		899CA6F51E8457FD008332D9 /* YADMusicPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899CA6F41E8457FD008332D9 /* YADMusicPlayerView.swift */; };
 		89C5D1621E6209D400D2B145 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89C5D1611E6209D400D2B145 /* SwiftyJSON.framework */; };
 		89C5D1641E6209D800D2B145 /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89C5D1631E6209D800D2B145 /* SDWebImage.framework */; };
 		89C5D1661E6209DB00D2B145 /* MWPhotoBrowser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89C5D1651E6209DB00D2B145 /* MWPhotoBrowser.framework */; };
@@ -77,12 +81,16 @@
 		893AC4171E69F34300B5CCED /* YYCache.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = YYCache.framework; path = "Pods/../build/Debug-iphoneos/YYCache/YYCache.framework"; sourceTree = "<group>"; };
 		893AC4191E69F34500B5CCED /* YYImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = YYImage.framework; path = "Pods/../build/Debug-iphoneos/YYImage/YYImage.framework"; sourceTree = "<group>"; };
 		893AC41B1E69F34900B5CCED /* YYWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = YYWebImage.framework; path = "Pods/../build/Debug-iphoneos/YYWebImage/YYWebImage.framework"; sourceTree = "<group>"; };
-		893AC41E1E69F45600B5CCED /* YADMusicCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YADMusicCollectionViewCell.swift; sourceTree = "<group>"; };
-		893AC41F1E69F45600B5CCED /* YADMusicCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YADMusicCollectionViewCell.xib; sourceTree = "<group>"; };
+		894C07BA1E810EC1005349C0 /* YADMusicModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YADMusicModel.swift; sourceTree = "<group>"; };
+		894C07BC1E811ABF005349C0 /* YADMusicTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YADMusicTableViewCell.swift; sourceTree = "<group>"; };
+		894C07BD1E811ABF005349C0 /* YADMusicTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YADMusicTableViewCell.xib; sourceTree = "<group>"; };
+		894C07C01E813D7C005349C0 /* StreamingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StreamingKit.framework; path = "Pods/../build/Debug-iphoneos/StreamingKit/StreamingKit.framework"; sourceTree = "<group>"; };
 		896446C41E62DF7100BBDFAF /* YADPhotoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YADPhotoModel.swift; sourceTree = "<group>"; };
 		896446C71E62F55400BBDFAF /* YADPhotoCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YADPhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		896446C81E62F55400BBDFAF /* YADPhotoCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YADPhotoCollectionViewCell.xib; sourceTree = "<group>"; };
 		8983613C1E65B5960097A000 /* YADPhotoLinkGetOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YADPhotoLinkGetOperation.swift; sourceTree = "<group>"; };
+		899CA6F11E83D064008332D9 /* YADPlayerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YADPlayerViewController.xib; sourceTree = "<group>"; };
+		899CA6F41E8457FD008332D9 /* YADMusicPlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YADMusicPlayerView.swift; sourceTree = "<group>"; };
 		89C5D1611E6209D400D2B145 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "../../Library/Developer/Xcode/DerivedData/YandexDisk-edkqnuurckcodvbjapdtolhqucgq/Build/Products/Debug-iphonesimulator/SwiftyJSON/SwiftyJSON.framework"; sourceTree = "<group>"; };
 		89C5D1631E6209D800D2B145 /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = "Pods/../build/Debug-iphoneos/SDWebImage/SDWebImage.framework"; sourceTree = "<group>"; };
 		89C5D1651E6209DB00D2B145 /* MWPhotoBrowser.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MWPhotoBrowser.framework; path = "Pods/../build/Debug-iphoneos/MWPhotoBrowser/MWPhotoBrowser.framework"; sourceTree = "<group>"; };
@@ -143,6 +151,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				894C07C11E813D7C005349C0 /* StreamingKit.framework in Frameworks */,
 				89C5D16A1E6209E200D2B145 /* MBProgressHUD.framework in Frameworks */,
 				89C5D1681E6209DF00D2B145 /* DACircularProgress.framework in Frameworks */,
 				89C5D1661E6209DB00D2B145 /* MWPhotoBrowser.framework in Frameworks */,
@@ -176,8 +185,8 @@
 		893AC41D1E69F44100B5CCED /* Custom Cell */ = {
 			isa = PBXGroup;
 			children = (
-				893AC41E1E69F45600B5CCED /* YADMusicCollectionViewCell.swift */,
-				893AC41F1E69F45600B5CCED /* YADMusicCollectionViewCell.xib */,
+				894C07BC1E811ABF005349C0 /* YADMusicTableViewCell.swift */,
+				894C07BD1E811ABF005349C0 /* YADMusicTableViewCell.xib */,
 			);
 			name = "Custom Cell";
 			sourceTree = "<group>";
@@ -226,6 +235,7 @@
 				896446C41E62DF7100BBDFAF /* YADPhotoModel.swift */,
 				844780DE1E634D61006FA3C0 /* YADVideoModel.swift */,
 				89CC0F061E6208D300051700 /* YandexDisk.xcdatamodeld */,
+				894C07BA1E810EC1005349C0 /* YADMusicModel.swift */,
 			);
 			name = "Data Model";
 			sourceTree = "<group>";
@@ -307,7 +317,9 @@
 				89C5D18F1E620C8200D2B145 /* YADMusicOperation.swift */,
 				89C5D1911E620C9700D2B145 /* YADMusicManager.swift */,
 				89C5D1931E620CA200D2B145 /* YADMusicViewController.swift */,
+				899CA6F41E8457FD008332D9 /* YADMusicPlayerView.swift */,
 				89C5D1951E620CAD00D2B145 /* Music.storyboard */,
+				899CA6F11E83D064008332D9 /* YADPlayerViewController.xib */,
 				89C5D1971E620CBE00D2B145 /* YADMusicAPI_WRAPPER.swift */,
 				89C5D1991E620CCA00D2B145 /* YADMusicPresenter.swift */,
 			);
@@ -369,6 +381,7 @@
 		89CC0EFE1E6208D300051700 /* YandexDisk */ = {
 			isa = PBXGroup;
 			children = (
+				89C5D16B1E620A0000D2B145 /* View Controllers */,
 				89C5D1781E620A6700D2B145 /* Start Screen Userstory */,
 				89C5D1771E620A6000D2B145 /* Settings Userstory */,
 				89C5D1761E620A5800D2B145 /* Music Userstory */,
@@ -382,7 +395,6 @@
 				89C5D16E1E620A1700D2B145 /* Data Model */,
 				89C5D16D1E620A1000D2B145 /* Helpers */,
 				89C5D16C1E620A0700D2B145 /* System */,
-				89C5D16B1E620A0000D2B145 /* View Controllers */,
 			);
 			path = YandexDisk;
 			sourceTree = "<group>";
@@ -390,6 +402,7 @@
 		C881BF0B8F43D1AD1F115D04 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				894C07C01E813D7C005349C0 /* StreamingKit.framework */,
 				893AC41B1E69F34900B5CCED /* YYWebImage.framework */,
 				893AC4191E69F34500B5CCED /* YYImage.framework */,
 				893AC4171E69F34300B5CCED /* YYCache.framework */,
@@ -469,13 +482,14 @@
 			files = (
 				89C5D1AE1E620DBF00D2B145 /* Photo.storyboard in Resources */,
 				89CC0F0D1E6208D300051700 /* LaunchScreen.storyboard in Resources */,
+				899CA6F21E83D064008332D9 /* YADPlayerViewController.xib in Resources */,
 				89C5D1C51E620F6C00D2B145 /* Podfile in Resources */,
 				89C5D1961E620CAD00D2B145 /* Music.storyboard in Resources */,
+				894C07BF1E811ABF005349C0 /* YADMusicTableViewCell.xib in Resources */,
 				89C5D1A21E620D2B00D2B145 /* Video.storyboard in Resources */,
 				844780E41E634EDC006FA3C0 /* YADVideoCollectionViewCell.xib in Resources */,
 				896446CA1E62F55400BBDFAF /* YADPhotoCollectionViewCell.xib in Resources */,
 				89CC0F0A1E6208D300051700 /* Assets.xcassets in Resources */,
-				893AC4211E69F45600B5CCED /* YADMusicCollectionViewCell.xib in Resources */,
 				89CC0F051E6208D300051700 /* Main.storyboard in Resources */,
 				89C5D18A1E620BE300D2B145 /* Settings.storyboard in Resources */,
 			);
@@ -555,7 +569,6 @@
 				89C5D1B41E620E1500D2B145 /* YADCoreDataManager.swift in Sources */,
 				89C5D1981E620CBE00D2B145 /* YADMusicAPI_WRAPPER.swift in Sources */,
 				89C5D1801E620B7B00D2B145 /* YADSettingsOperation.swift in Sources */,
-				893AC4201E69F45600B5CCED /* YADMusicCollectionViewCell.swift in Sources */,
 				89C5D17A1E620B0200D2B145 /* YADLoginViewController.swift in Sources */,
 				89C5D19C1E620D1100D2B145 /* YADVideoOperation.swift in Sources */,
 				89C5D1A41E620D3700D2B145 /* YADVideoAPI_WRAPPER.swift in Sources */,
@@ -569,13 +582,16 @@
 				89C5D1821E620B8900D2B145 /* YADSettingsManager.swift in Sources */,
 				89C5D1B81E620E5D00D2B145 /* YADBasePresenter.swift in Sources */,
 				89C5D1BA1E620E8800D2B145 /* YADDependencyInjector.swift in Sources */,
+				894C07BE1E811ABF005349C0 /* YADMusicTableViewCell.swift in Sources */,
 				89CC0F001E6208D300051700 /* AppDelegate.swift in Sources */,
 				89C5D1C91E620FA800D2B145 /* YADBaseTabbarController.swift in Sources */,
+				894C07BB1E810EC1005349C0 /* YADMusicModel.swift in Sources */,
 				89C5D1C11E620ED700D2B145 /* YADTokenFabric.swift in Sources */,
 				89FB64711E7AF453001B86E1 /* YADPhotoUploadOperation.swift in Sources */,
 				89C5D1901E620C8200D2B145 /* YADMusicOperation.swift in Sources */,
 				89C5D1BC1E620EA900D2B145 /* YADOperationManager.swift in Sources */,
 				89C5D1B01E620DCC00D2B145 /* YADPhotoAPI_WRAPPER.swift in Sources */,
+				899CA6F51E8457FD008332D9 /* YADMusicPlayerView.swift in Sources */,
 				844780DF1E634D61006FA3C0 /* YADVideoModel.swift in Sources */,
 				89C5D17C1E620B3C00D2B145 /* YADLoginManager.swift in Sources */,
 			);
@@ -712,6 +728,7 @@
 					"$(PROJECT_DIR)/build/Debug-iphoneos/YYCache",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/YYImage",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/YYWebImage",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/StreamingKit",
 				);
 				INFOPLIST_FILE = YandexDisk/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -738,6 +755,7 @@
 					"$(PROJECT_DIR)/build/Debug-iphoneos/YYCache",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/YYImage",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/YYWebImage",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/StreamingKit",
 				);
 				INFOPLIST_FILE = YandexDisk/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;

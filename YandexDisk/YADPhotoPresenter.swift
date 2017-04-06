@@ -8,11 +8,12 @@
 
 import Foundation
 import MBProgressHUD
+import MWPhotoBrowser
 
 class YADPhotoPresenter: YADBasePresenter
 {
     
-    private let dataSource = NSMutableArray()
+    private var dataSource = NSMutableArray()
     private var jsonModelCount = 0
     private var pageSize = 10
     private weak var view: YADBaseView?
@@ -29,33 +30,24 @@ class YADPhotoPresenter: YADBasePresenter
     
     func refreshData()
     {
-        let allCount = dataSource.count
-        dataSource.removeAllObjects()
-        loadModels(withOffset: 0, and: allCount)
-
+        loadModels(withOffset: 0, and: dataSource.count)
     }
     
     func getModel(atIndexPath indexPath: NSIndexPath) -> Any
     {
         let model = dataSource[indexPath.row] as! YADPhotoModel
         
+        print("")
+        
         if (indexPath.row == dataSource.count - 1)
         {
-        
-            if jsonModelCount == pageSize
-            {
-                loadModels(withOffset: dataSource.count, and: pageSize)
-            }
-            
-            if jsonModelCount < pageSize
-            {
-                return model
-            }
             
             if jsonModelCount == 0
             {
                 return model
             }
+            
+            loadModels(withOffset: dataSource.count, and: pageSize)
         }
         
         return model
@@ -72,27 +64,18 @@ class YADPhotoPresenter: YADBasePresenter
         return dataSource.count
     }
     
-    func photoGetLink(withPath path: String, hud: MBProgressHUD)
+    func photoGetLink(withModel model: Any, success: @escaping () -> Void, failure: @escaping () -> Void)
     {
-        YADPhotoManager.getLink(withPath: path, success: {[weak self](downloadLink) in
+        print("model in PhotoGetLink - \((model as! YADPhotoModel).name)")
+        YADPhotoManager.getLink(withPath: (model as! YADPhotoModel).path, success: { (downloadLink) in
             
-            for model in (self?.dataSource)!
-            {
-                if (model as! YADPhotoModel).fullSizeURL == ""
-                {
-                    if (model as! YADPhotoModel).path == path
-                    {
-                        DispatchQueue.main.async {
-                            
-                            (model as! YADPhotoModel).fullSizeURL = downloadLink
-                            hud.hide(true)
-                            hud.removeFromSuperViewOnHide = true
-                        }
-                    }
-                }
+            DispatchQueue.main.async {
+                (model as! YADPhotoModel).fullSizeURL = downloadLink
+                success()
             }
             
         }) { (errorCode) in
+            print("error with code - \(errorCode)")
         }
     }
     
@@ -104,12 +87,23 @@ class YADPhotoPresenter: YADBasePresenter
             
                 if (self != nil)
                 {
-                    self?.dataSource.addObjects(from: data as! [Any])
+                    if offset == 0
+                    {
+                        self?.dataSource = NSMutableArray (array: data)
+                    }
+                    else
+                    {
+                        self?.dataSource.addObjects(from: data as! [Any])
+                    }
+                    
                     self?.jsonModelCount = data.count
+                    
+                    print("количество моделей - \(data.count)")
+                    
                     self?.view?.reloadData()
                 }
             }
-        }, failure: {[weak self] (errorCode) in
+        }, failure: {(errorCode) in
         
         })
     }
@@ -118,17 +112,17 @@ class YADPhotoPresenter: YADBasePresenter
     {
         YADPhotoManager.uploadPhoto(withName: path, url: url, success: { (uploadHref) in
             
-            print("uploadHref - \(uploadHref)")
-            
             let request = NSMutableURLRequest()
             request.httpMethod = "PUT"
-            request.url = URL(string: uploadHref)
+            let urlToUpload = URL(string: uploadHref)
+    
+            request.url = urlToUpload
             
-            if let fileURL = URL(string: url)
-            {
-                let task = URLSession.shared.uploadTask(with: request as URLRequest, fromFile: fileURL)
-                task.resume()
-            }
+            let fileURL = URL(fileURLWithPath: url)
+            
+            let task = URLSession.shared.uploadTask(with: request as URLRequest, fromFile: fileURL)
+            
+            task.resume()
             
         }) { (errorCode) in
             

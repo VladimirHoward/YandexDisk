@@ -26,9 +26,16 @@ class YADOperationManager
 
     }
     
-    class func addServiceOperation (op: Operation)
+    class func addServiceOperation (op: Operation , cancellingQueue flag: Bool = false )
     {
+        
         serviceLogicOperation.maxConcurrentOperationCount = 1
+        
+        if flag
+        {
+            serviceLogicOperation.cancelAllOperations()
+        }
+
         serviceLogicOperation.addOperation(op)
     }
 }

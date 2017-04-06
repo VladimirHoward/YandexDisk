@@ -7,5 +7,6 @@ pod 'SDWebImage'
 pod 'SwiftyJSON'
 pod 'MWPhotoBrowser'
 pod 'MBProgressHUD'
+pod 'StreamingKit'
 
 end

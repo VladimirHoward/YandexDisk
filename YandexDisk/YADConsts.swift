@@ -47,6 +47,8 @@ class YADConst
             static let kImageType: NSString = "image"
             static let kVideoType: NSString = "video"
             static let kSortByDate: NSString = "-created"
+            static let kSortByName: NSString = "name"
+            static let kMusicType: NSString = "audio"
         }
     }
     

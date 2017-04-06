@@ -32,7 +32,7 @@ class YADGlobalAPI_WRAPPER
             }
         }
         
-        print("строка запроса - \(requestString)")
+//        print("строка запроса - \(requestString)")
         
         let request = NSMutableURLRequest ()
         request.httpMethod = "GET"
@@ -103,9 +103,9 @@ extension YADGlobalAPI_WRAPPER
         let agrsDictionary = NSMutableDictionary ()
         
         let correctPath = path.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)!
-        if correctPath != nil
+        if correctPath != ""
         {
-            agrsDictionary.setObject("\(correctPath)", forKey: YADConst.URLConst.Arguments.kPath)
+            agrsDictionary.setObject(correctPath, forKey: YADConst.URLConst.Arguments.kPath)
         }
         let request = composeGenericHTTPGetRequest(forBaseURL: YADConst.kBaseURL, andMethod: YADConst.Scripts.kMethodDownloadLinkGet, withParameters: agrsDictionary)
         let task = URLSession.shared.dataTask(with: request as URLRequest) { (data, response, error) in

@@ -8,12 +8,14 @@ PODS:
   - SDWebImage (3.8.2):
     - SDWebImage/Core (= 3.8.2)
   - SDWebImage/Core (3.8.2)
+  - StreamingKit (0.1.29)
   - SwiftyJSON (3.1.4)
 
 DEPENDENCIES:
   - MBProgressHUD
   - MWPhotoBrowser
   - SDWebImage
+  - StreamingKit
   - SwiftyJSON
 
 SPEC CHECKSUMS:
@@ -21,8 +23,9 @@ SPEC CHECKSUMS:
   MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
   MWPhotoBrowser: 5836d7aa041dc05a13de380c246826578adc5ea5
   SDWebImage: '098e97e6176540799c27e804c96653ee0833d13c'
+  StreamingKit: c329785aaef3ac142d4ae388345bfe1ed23cfd45
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: 5d894c5554026e73d5ba8531a39af9c194a70c7d
+PODFILE CHECKSUM: '091ccf58d3b66460b53d2f0608272915fdaf3224'
 
 COCOAPODS: 1.2.0.rc.1

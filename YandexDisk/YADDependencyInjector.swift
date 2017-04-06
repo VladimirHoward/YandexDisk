@@ -26,9 +26,15 @@ class YADDependencyInjector
         {
             presenter = YADPhotoPresenter()
         }
-        else if (view is YADVideoViewController)
+        
+        if (view is YADVideoViewController)
         {
             presenter = YADVideoPeresenter()
+        }
+        
+        if (view is YADMusicViewController)
+        {
+            presenter = YADMusicPresenter()
         }
 
         

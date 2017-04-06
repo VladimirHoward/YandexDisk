@@ -34,6 +34,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>StreamingKit.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>SwiftyJSON.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -52,7 +57,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5AE47E3AEFC6B55EF3B9580545860DC7</key>
+		<key>317CE673F529560D99393539E18E472B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>699A7D86995C460CD269190852B50B33</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -72,7 +82,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>CEF0F489012666B9E83BD29CF22158BE</key>
+		<key>FCB4671A448FFB22F92473A706F165F2</key>
 		<dict>
 			<key>primary</key>
 			<true/>

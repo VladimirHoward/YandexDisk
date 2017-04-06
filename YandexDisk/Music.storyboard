@@ -5,7 +5,6 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,36 +20,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="bwr-C0-w6L">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Gav-th-WFi">
                                 <rect key="frame" x="0.0" y="20" width="375" height="598"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="jzd-P2-Ihk">
-                                    <size key="itemSize" width="50" height="50"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="TrA-HU-B9Y">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </view>
-                                    </collectionViewCell>
-                                </cells>
-                            </collectionView>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="bwr-C0-w6L" firstAttribute="leading" secondItem="Aaa-HX-bZz" secondAttribute="leadingMargin" constant="-16" id="9HA-Ff-Vw6"/>
-                            <constraint firstItem="bwr-C0-w6L" firstAttribute="top" secondItem="9MM-g0-Ot8" secondAttribute="bottom" id="DKN-88-bBa"/>
-                            <constraint firstItem="xAG-lP-fcp" firstAttribute="top" secondItem="bwr-C0-w6L" secondAttribute="bottom" id="Wnf-bT-HsE"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="bwr-C0-w6L" secondAttribute="trailing" constant="-16" id="lqf-UT-54v"/>
+                            <constraint firstItem="Gav-th-WFi" firstAttribute="width" secondItem="Aaa-HX-bZz" secondAttribute="width" id="17S-hR-u9h"/>
+                            <constraint firstItem="Gav-th-WFi" firstAttribute="centerY" secondItem="Aaa-HX-bZz" secondAttribute="centerY" constant="-14.5" id="E90-zr-Iz5"/>
+                            <constraint firstItem="Gav-th-WFi" firstAttribute="height" secondItem="Aaa-HX-bZz" secondAttribute="height" constant="-69" id="hzg-04-rvz"/>
+                            <constraint firstItem="Gav-th-WFi" firstAttribute="centerX" secondItem="Aaa-HX-bZz" secondAttribute="centerX" id="jPQ-OG-rym"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Музыка" image="music-player" id="e5V-Ke-uu6"/>
+                    <connections>
+                        <outlet property="tableView" destination="Gav-th-WFi" id="RQc-86-TPZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lz7-eY-gZS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

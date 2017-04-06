@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import AVFoundation
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -33,6 +34,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
         self.window?.rootViewController = initialVC
+        
+        func setupMusicPlayer()
+        {
+            do {
+                try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
+            } catch {
+                print("Failed to setup audio")
+            }
+        }
         
         return true
     }

@@ -34,7 +34,7 @@ class YADLoginViewController: UIViewController
         YADLoginManager.sharedInstance.login(withUnderlayController: webView, success: {
             
 //            print("2? полезли в success YADLoginManager")
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5)
             {
                 self.performSegue(withIdentifier: YADConst.UIConsts.kLoginTabbarSegueIdentifier, sender: self)
             }
