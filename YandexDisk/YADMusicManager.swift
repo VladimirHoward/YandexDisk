@@ -16,4 +16,10 @@ class YADMusicManager
         let operation = YADMusicOperation(withLimit: limit, offset: offset, success: success, failure: failure)
         YADOperationManager.addBusinessLogicOperation(op: operation, cancellingQueue: true)
     }
+    
+    class func getLink (withPath path: String, success: @escaping(String) -> Void, failure: @escaping (Int) -> Void)
+    {
+        let operation = YADMusicGetLinkOperation(withMusicPath: path, success: success, failure: failure)
+        YADOperationManager.addServiceOperation(op: operation, cancellingQueue: true)
+    }
 }

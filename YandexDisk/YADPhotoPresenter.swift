@@ -64,7 +64,7 @@ class YADPhotoPresenter: YADBasePresenter
         return dataSource.count
     }
     
-    func photoGetLink(withModel model: Any, success: @escaping () -> Void, failure: @escaping () -> Void)
+    func itemGetLink(withModel model: Any, success: @escaping () -> Void, failure: @escaping () -> Void)
     {
         print("model in PhotoGetLink - \((model as! YADPhotoModel).name)")
         YADPhotoManager.getLink(withPath: (model as! YADPhotoModel).path, success: { (downloadLink) in

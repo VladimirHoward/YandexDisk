@@ -34,6 +34,7 @@ class YADMusicPresenter:YADBasePresenter
     
     func getModel(atIndexPath indexPath: NSIndexPath) -> Any
     {
+        print("model count - \(dataSource.count)")
         let model = dataSource[indexPath.row] as! YADMusicModel
         
         if (indexPath.row == dataSource.count - 1)
@@ -81,31 +82,24 @@ class YADMusicPresenter:YADBasePresenter
         }
     }
     
-    func audioGetLink(withPath path: String, success: @escaping () -> Void, failure: @escaping () -> Void)
+    func itemGetLink(withModel model: Any, success: @escaping () -> Void, failure: @escaping () -> Void)
     {
-        YADPhotoManager.getLink(withPath: path, success: {[weak self](downloadLink) in
+        
+        YADMusicManager.getLink(withPath: (model as! YADMusicModel).path, success: { (downloadLink) in
             
-            for model in (self?.dataSource)!
-            {
-                if (model as! YADMusicModel).audioURL == ""
-                {
-                    if (model as! YADMusicModel).path == path
-                    {
-                        DispatchQueue.main.async {
-                            
-                            print("model.path - \(path)")
-                            print("downloadLink - \(downloadLink)")
-                            (model as! YADMusicModel).audioURL = downloadLink
-                            success()
-                        }
-                    }
-                }
+            DispatchQueue.main.async {
+                (model as! YADMusicModel).audioURL = downloadLink
+                success()
             }
             
         }) { (errorCode) in
-            print("error with - \(errorCode)")
+            print("error in presenter with code - \(errorCode)")
         }
-
     }
     
+    func getSimpleModel(atIndexPath indexPath: NSIndexPath) -> Any
+    {
+        let model = dataSource[indexPath.row]
+        return model
+    }
 }

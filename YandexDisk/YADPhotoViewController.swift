@@ -19,10 +19,6 @@ class YADPhotoViewController: UIViewController
     let kPhotoListCellNib = UINib(nibName: "YADPhotoCollectionViewCell", bundle: nil)
     let kPhotoListCellReuseIdentifier = "kPhotoListCellReuseIdentifier"
     
-    var beginYpoint : CGFloat = -64.3
-    var currentYpoint = CGFloat()
-    var endYpoint = CGFloat()
-    
     let imagePicker = UIImagePickerController()
     
     lazy var refreshControl: UIRefreshControl = {
@@ -139,12 +135,10 @@ extension YADPhotoViewController: UICollectionViewDataSource, UICollectionViewDe
 
         if model.fullSizeURL == ""
         {
-            presenter?.photoGetLink!(withModel: model, success: { 
-                
+            presenter?.itemGetLink!(withModel: model, success: {
                 DispatchQueue.main.async {
                     self.browser?.reloadData()
                 }
-                
             }, failure: { 
                 print("error in selection")
             })
@@ -185,14 +179,12 @@ extension YADPhotoViewController: MWPhotoBrowserDelegate
         }
         else
         {
-            presenter?.photoGetLink!(withModel: model, success: { 
-                
+            presenter?.itemGetLink!(withModel: model, success: {
                 DispatchQueue.main.async {
                     self.browser?.reloadData()
                 }
-                
-            }, failure: { 
-                print("error in browser")
+            }, failure: {
+                print("error in selection")
             })
             return MWPhoto()
         }

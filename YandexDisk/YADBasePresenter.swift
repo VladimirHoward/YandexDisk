@@ -18,8 +18,7 @@ import MWPhotoBrowser
     func getModel (atIndexPath indexPath: NSIndexPath) -> Any
     func getModelsCount () -> Int
     func loadModels (withOffset offset: Int, and count: Int) -> Void
-    @objc optional func photoGetLink (withModel model: Any, success: @escaping ()->Void, failure: @escaping () -> Void) -> Void
-    @objc optional func audioGetLink (withPath path: String, success: @escaping () -> Void, failure: @escaping () -> Void) -> Void
+    @objc optional func itemGetLink (withModel model: Any, success: @escaping ()->Void, failure: @escaping () -> Void) -> Void
     
     @objc optional func getSimpleModel (atIndexPath indexPath: NSIndexPath) -> Any
     @objc optional func uploadPhoto (WithName path: String, url: String) -> Void

@@ -68,6 +68,7 @@
 		89CC0F081E6208D300051700 /* YandexDisk.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 89CC0F061E6208D300051700 /* YandexDisk.xcdatamodeld */; };
 		89CC0F0A1E6208D300051700 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89CC0F091E6208D300051700 /* Assets.xcassets */; };
 		89CC0F0D1E6208D300051700 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89CC0F0B1E6208D300051700 /* LaunchScreen.storyboard */; };
+		89D686771E9647AB0079D62B /* YADMusicGetLinkOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D686761E9647AB0079D62B /* YADMusicGetLinkOperation.swift */; };
 		89FB64711E7AF453001B86E1 /* YADPhotoUploadOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FB64701E7AF453001B86E1 /* YADPhotoUploadOperation.swift */; };
 		D3D7F7DCBCFFFDFEBB6F19CF /* Pods_YandexDisk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BE49D53CE0865CB5E5DF3E1 /* Pods_YandexDisk.framework */; };
 /* End PBXBuildFile section */
@@ -141,6 +142,7 @@
 		89CC0F091E6208D300051700 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		89CC0F0C1E6208D300051700 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89CC0F0E1E6208D300051700 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		89D686761E9647AB0079D62B /* YADMusicGetLinkOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YADMusicGetLinkOperation.swift; sourceTree = "<group>"; };
 		89FB64701E7AF453001B86E1 /* YADPhotoUploadOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YADPhotoUploadOperation.swift; sourceTree = "<group>"; };
 		98C5028C0B8BEC14E65183CA /* Pods-YandexDisk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YandexDisk.release.xcconfig"; path = "Pods/Target Support Files/Pods-YandexDisk/Pods-YandexDisk.release.xcconfig"; sourceTree = "<group>"; };
 		B74452E7DB213C514D157E26 /* Pods-YandexDisk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YandexDisk.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YandexDisk/Pods-YandexDisk.debug.xcconfig"; sourceTree = "<group>"; };
@@ -315,6 +317,7 @@
 			children = (
 				893AC41D1E69F44100B5CCED /* Custom Cell */,
 				89C5D18F1E620C8200D2B145 /* YADMusicOperation.swift */,
+				89D686761E9647AB0079D62B /* YADMusicGetLinkOperation.swift */,
 				89C5D1911E620C9700D2B145 /* YADMusicManager.swift */,
 				89C5D1931E620CA200D2B145 /* YADMusicViewController.swift */,
 				899CA6F41E8457FD008332D9 /* YADMusicPlayerView.swift */,
@@ -581,6 +584,7 @@
 				89CC0F081E6208D300051700 /* YandexDisk.xcdatamodeld in Sources */,
 				89C5D1821E620B8900D2B145 /* YADSettingsManager.swift in Sources */,
 				89C5D1B81E620E5D00D2B145 /* YADBasePresenter.swift in Sources */,
+				89D686771E9647AB0079D62B /* YADMusicGetLinkOperation.swift in Sources */,
 				89C5D1BA1E620E8800D2B145 /* YADDependencyInjector.swift in Sources */,
 				894C07BE1E811ABF005349C0 /* YADMusicTableViewCell.swift in Sources */,
 				89CC0F001E6208D300051700 /* AppDelegate.swift in Sources */,

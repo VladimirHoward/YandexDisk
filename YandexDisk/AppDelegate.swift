@@ -35,13 +35,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         self.window?.rootViewController = initialVC
         
-        func setupMusicPlayer()
-        {
+        
+        do {
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback, with: .mixWithOthers)
+            print("AVAudioSession Category Playback OK")
             do {
-                try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
+                try AVAudioSession.sharedInstance().setActive(true)
+                print("AVAudioSession is Active")
             } catch {
-                print("Failed to setup audio")
+                print(error)
             }
+        } catch {
+            print(error)
         }
         
         return true
@@ -51,6 +56,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidEnterBackground(_ application: UIApplication)
     {
         YADCoreDataManager.sharedInstance.save()
+        
     }
     
 }
